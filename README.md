@@ -1,6 +1,8 @@
 # StarvinSlugs
 
 We are StarvinSlugs, a student-run snack and drink business at UC Santa Cruz.
+StarvinSlugs makes snacks and drinks easy to get for UCSC students. We run a student-led business that meets students where they are in high traffic areas, builds community through food, and raises funds to bring even better offerings on campus.
+
 
 
 ## Updating the site
