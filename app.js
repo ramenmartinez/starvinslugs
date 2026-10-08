@@ -1,6 +1,6 @@
 // ============================================================
 //  Builds the menu, team, events, and upcoming-event sections
-//  from data.js. You shouldn't need to edit this file.
+//  from data.js.
 // ============================================================
 
 // Small helper: el("p", "class-name", "text")

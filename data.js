@@ -1,6 +1,5 @@
 // ============================================================
 //  STARVINSLUGS SITE CONTENT
-//  Everything you'll update regularly is in this one file.
 //  Edit the text between the quotes, then save / commit.
 // ============================================================
 
