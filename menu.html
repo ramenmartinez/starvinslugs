@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menu — StarvinSlugs</title>
+  <meta name="description" content="Affordable pizza, hot dogs, and energy drinks at UC Santa Cruz. Everything is $3, or two for $5.">
+  <meta name="theme-color" content="#FAFAF6">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="">
+        <span>StarvinSlugs</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="team.html">Team</a>
+        <a href="menu.html" aria-current="page">Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-bottom">
+    <header class="page-intro">
+      <p class="label">Current menu</p>
+      <h1>Our menu</h1>
+      <p class="desc">Items may vary by day. Check our Instagram for today's availability.</p>
+    </header>
+
+    <div class="menu-grid" id="menu"></div>
+
+    <section class="menu-deals" id="menu-deals">
+      <h2>Two for $5 deals</h2>
+      <ul></ul>
+    </section>
+
+    <div class="menu-foot">
+      <p>Find us at <span data-location>Science &amp; Engineering Library</span></p>
+      <a class="btn btn-secondary" data-ig target="_blank" rel="noopener noreferrer">Today's hours on Instagram</a>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span data-year></span> StarvinSlugs · UC Santa Cruz</p>
+      <a data-ig target="_blank" rel="noopener noreferrer">Instagram <span data-ig-handle></span></a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

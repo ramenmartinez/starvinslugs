@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StarvinSlugs — Snacks and drinks at UC Santa Cruz</title>
+  <meta name="description" content="StarvinSlugs is a student-run snack and drink business at UC Santa Cruz. Affordable pizza, hot dogs, and energy drinks, served in the middle of campus. Everything is $3, or any two for $5.">
+  <meta name="theme-color" content="#FAFAF6">
+  <link rel="icon" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="logo.png" alt="">
+        <span>StarvinSlugs</span>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="index.html" aria-current="page">About</a>
+        <a href="team.html">Team</a>
+        <a href="menu.html">Menu</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-inner">
+        <p class="label">UC Santa Cruz · Student-run</p>
+        <h1>Snacks and drinks, <span class="highlight">right where you are.</span></h1>
+        <p class="hero-text">Affordable pizza, hot dogs, and energy drinks, served in the middle of campus between classes. Everything is $3, or two for $5.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="menu.html">See the menu</a>
+          <a class="btn btn-secondary" data-ig data-ig-handle target="_blank" rel="noopener noreferrer">@starvinslugs</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="card upcoming" id="upcoming">
+        <div class="upcoming-left">
+          <p class="label">Upcoming fundraiser</p>
+          <h2 data-up-title></h2>
+          <ul class="upcoming-meta">
+            <li data-up-date><span></span></li>
+            <li data-up-loc><span></span></li>
+          </ul>
+          <p class="upcoming-details" data-up-details></p>
+          <div class="upcoming-cta">
+            <a class="btn btn-secondary" data-ig target="_blank" rel="noopener noreferrer">Updates on Instagram</a>
+          </div>
+        </div>
+        <div class="upcoming-right">
+          <div>
+            <h3>Prices</h3>
+            <ul data-up-prices></ul>
+          </div>
+          <div class="deals-box" data-up-deals>
+            <h3>Two for $5 deals</h3>
+            <ul></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" aria-label="Our story">
+      <div class="story">
+        <article class="card">
+          <p class="label">The problem</p>
+          <h2>Food on campus is hard to reach.</h2>
+          <p class="body">The main markets sit at the edges of campus. Between classes, students often rely on coffee shops or vending machines, paying up to $4 for a single granola bar. In heat or rain, many skip eating altogether.</p>
+        </article>
+        <article class="card">
+          <p class="label">The cause</p>
+          <h2>No food options in central campus.</h2>
+          <p class="body">The issue is access. Over a long day of classes, limited options affect energy, focus, and the time students have for everything else.</p>
+        </article>
+        <article class="card">
+          <p class="label">Our solution</p>
+          <h2>We bring the food to students.</h2>
+          <p class="body">StarvinSlugs is a small business run by UCSC students. We set up in high-traffic campus locations with affordable snacks and drinks, so students can grab something on the way to class.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mission">
+      <div class="container">
+        <img src="logo.png" alt="">
+        <div>
+          <p class="label">Our mission</p>
+          <blockquote>
+            <p>Make snacks and drinks easy to get for UCSC students, meet them where they are, and build community through food.</p>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="container popups">
+      <p class="label">Recent pop-ups</p>
+      <h2>Where we've been</h2>
+      <ul class="popup-grid" id="popups"></ul>
+    </section>
+
+    <section class="container section">
+      <div class="card find-us">
+        <div>
+          <p class="label">Find us at</p>
+          <h2 data-location>Science &amp; Engineering Library</h2>
+          <p class="sub">Follow our Instagram for today's hours and location.</p>
+        </div>
+        <a class="btn btn-primary" data-ig target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span data-year></span> StarvinSlugs · UC Santa Cruz</p>
+      <a data-ig target="_blank" rel="noopener noreferrer">Instagram <span data-ig-handle></span></a>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

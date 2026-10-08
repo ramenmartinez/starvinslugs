@@ -1,0 +1,380 @@
+/* ---------- Brand colors & fonts ---------- */
+:root {
+  --navy: #011a8a;
+  --navy-dark: #01136a;
+  --yellow: #fde65c;
+  --bg: #fafaf6;
+  --surface: #ffffff;
+  --text: #14183a;
+  --muted: #565a70;
+  --border: #e4e4dc;
+
+  --font-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", Impact, ui-sans-serif, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; }
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--navy);
+  text-wrap: balance;
+  margin: 0;
+}
+
+p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+::selection { background: var(--yellow); color: var(--navy); }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; }
+
+.container {
+  width: 100%;
+  max-width: 1128px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+.label { font-size: 14px; line-height: 1.4; font-weight: 500; color: var(--muted); }
+.muted { color: var(--muted); }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid var(--navy);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.15s, border-color 0.15s;
+}
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--navy-dark); }
+.btn-secondary { background: var(--surface); color: var(--navy); border-color: var(--border); }
+.btn-secondary:hover { border-color: rgba(1, 26, 138, 0.4); }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--border);
+  background: rgba(250, 250, 246, 0.9);
+  backdrop-filter: blur(8px);
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 64px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand img { width: 36px; height: 36px; }
+.brand span { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--navy); }
+
+.nav { display: flex; gap: 4px; }
+.nav a {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.15s;
+}
+.nav a:hover { color: var(--navy); }
+.nav a[aria-current="page"] { background: var(--yellow); color: var(--navy); }
+
+/* ---------- Footer ---------- */
+.site-footer { border-top: 1px solid var(--border); }
+.site-footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-block: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.site-footer a { font-weight: 500; color: var(--navy); }
+.site-footer a:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ---------- Home: hero ---------- */
+.hero { padding-top: 64px; padding-bottom: 56px; }
+.hero-inner { max-width: 720px; }
+.hero h1 {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+}
+.hero h1 .highlight {
+  background: var(--navy);
+  color: var(--yellow);
+  padding: 0 8px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.hero-text { margin-top: 24px; max-width: 52ch; font-size: 17px; color: var(--muted); }
+.actions { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+.section { padding-bottom: 48px; }
+
+/* ---------- Home: upcoming event ---------- */
+.upcoming {
+  display: grid;
+  gap: 24px;
+  padding: 24px;
+}
+.upcoming-left { display: flex; flex-direction: column; }
+.upcoming h2 { margin-top: 8px; font-size: 22px; }
+.upcoming-meta { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.upcoming-meta li { display: flex; align-items: center; gap: 8px; }
+.upcoming-meta svg { width: 16px; height: 16px; color: var(--navy); flex-shrink: 0; }
+.upcoming-details { margin-top: 16px; max-width: 48ch; font-size: 15px; color: var(--muted); }
+.upcoming-cta { margin-top: 24px; }
+.upcoming-right { display: flex; flex-direction: column; gap: 16px; }
+.upcoming-right h3 { font-size: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+/* Price rows with dotted leader line */
+.price-row { display: flex; align-items: baseline; gap: 12px; padding-block: 8px; font-size: 15px; }
+.price-row .name { font-weight: 500; }
+.price-row .note { margin-left: 6px; font-weight: 400; color: var(--muted); }
+.price-row .dots {
+  flex: 1;
+  min-width: 24px;
+  transform: translateY(-4px);
+  border-bottom: 1px dotted rgba(86, 90, 112, 0.4);
+}
+.price-row .price { flex-shrink: 0; font-weight: 600; color: var(--navy); font-variant-numeric: tabular-nums; }
+
+.deals-box { border-radius: 8px; background: var(--navy); color: #fff; padding: 16px; }
+.deals-box h3 { color: #fff; font-size: 16px; padding: 0; border: 0; }
+.deals-box ul { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.deals-box li { display: flex; justify-content: space-between; gap: 12px; font-size: 15px; }
+.deals-box li span:last-child { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+/* ---------- Home: story ---------- */
+.story { display: grid; gap: 16px; }
+.story article { padding: 24px; }
+.story h2 { margin-top: 8px; font-size: 19px; }
+.story p.body { margin-top: 8px; font-size: 15px; color: var(--muted); }
+
+/* ---------- Home: mission ---------- */
+.mission { background: var(--navy); color: #fff; }
+.mission .container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-block: 48px;
+}
+.mission img { width: 80px; height: 80px; border-radius: 50%; flex-shrink: 0; }
+.mission .label { color: rgba(255, 255, 255, 0.7); }
+.mission blockquote { margin: 8px 0 0; }
+.mission blockquote p {
+  max-width: 44ch;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* ---------- Home: recent pop-ups ---------- */
+.popups { padding-block: 48px; }
+.popups h2 { margin-top: 4px; font-size: 24px; }
+.popup-grid { margin-top: 20px; display: grid; gap: 16px; }
+.popup { display: flex; flex-direction: column; overflow: hidden; }
+.popup img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-bottom: 1px solid var(--border); }
+.popup-body { padding: 20px; }
+.popup .label { font-size: 13px; }
+.popup h3 { margin-top: 6px; font-size: 17px; }
+.popup p.recap { margin-top: 6px; font-size: 15px; color: var(--muted); }
+
+/* ---------- Home: find us ---------- */
+.find-us {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+}
+.find-us h2 { margin-top: 4px; font-size: 22px; }
+.find-us p.sub { margin-top: 4px; font-size: 15px; color: var(--muted); }
+.find-us .btn { align-self: flex-start; }
+
+/* ---------- Page intro (Team / Menu) ---------- */
+.page-intro { padding-top: 48px; padding-bottom: 32px; }
+.page-intro h1 { margin-top: 8px; max-width: 24ch; font-size: 32px; }
+.page-intro p.desc { margin-top: 12px; max-width: 56ch; font-size: 17px; color: var(--muted); }
+
+/* ---------- Team ---------- */
+.team-groups { display: flex; flex-direction: column; gap: 40px; }
+.team-group { border-top: 1px solid var(--border); padding-top: 20px; }
+.team-group h2 { font-size: 18px; }
+.team-grid {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+.member .photo {
+  aspect-ratio: 4 / 5;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.member .photo img { width: 100%; height: 100%; object-fit: cover; }
+.member .initials { font-size: 32px; font-weight: 600; color: rgba(1, 26, 138, 0.8); }
+.member h3 { margin-top: 12px; font-size: 16px; }
+.member .role { margin-top: 2px; font-size: 14px; color: var(--muted); }
+.member .bio { margin-top: 8px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+
+.closed-note {
+  margin-top: 40px;
+  padding: 16px 20px;
+  font-size: 15px;
+  color: var(--muted);
+}
+
+/* ---------- Menu ---------- */
+.menu-grid { display: grid; gap: 20px; }
+.menu-col { padding: 24px; }
+.menu-col h2 { font-size: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.menu-col ul { margin-top: 4px; }
+.menu-col .price-row { padding-block: 12px; font-size: 16px; }
+.menu-col .name-wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; min-width: 0; }
+.menu-col .note { margin-left: 0; font-size: 14px; }
+.price-row.sold-out { opacity: 0.55; }
+.price-row.sold-out .name { text-decoration: line-through; }
+.sold-badge {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.menu-deals { margin-top: 20px; border-radius: 12px; background: var(--navy); color: #fff; padding: 24px; }
+.menu-deals h2 { color: #fff; font-size: 20px; }
+.menu-deals ul { margin-top: 12px; display: grid; gap: 12px; }
+.menu-deals li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 12px;
+}
+.menu-deals .deal-name { display: block; font-weight: 500; }
+.menu-deals .deal-desc { font-size: 14px; color: rgba(255, 255, 255, 0.75); }
+.menu-deals .deal-price { flex-shrink: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+.menu-foot {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.menu-foot p { font-size: 18px; font-weight: 600; color: var(--navy); }
+.menu-foot .btn { align-self: flex-start; }
+
+.page-bottom { padding-bottom: 48px; }
+
+/* ---------- Small phones: keep the header from crowding ---------- */
+@media (max-width: 420px) {
+  .brand { gap: 8px; }
+  .brand img { width: 30px; height: 30px; }
+  .brand span { font-size: 16px; }
+  .nav { gap: 0; }
+  .nav a { padding: 6px 10px; font-size: 14px; }
+}
+
+/* ---------- Bigger screens ---------- */
+@media (min-width: 640px) {
+  .container { padding-inline: 24px; }
+  .site-footer .container { flex-direction: row; align-items: center; justify-content: space-between; }
+  .hero { padding-top: 96px; padding-bottom: 80px; }
+  .hero h1 { font-size: 60px; }
+  .hero-text { font-size: 18px; }
+  .section { padding-bottom: 56px; }
+  .upcoming { padding: 32px; }
+  .upcoming h2 { font-size: 24px; }
+  .mission .container { padding-block: 56px; }
+  .mission img { width: 96px; height: 96px; }
+  .mission blockquote p { font-size: 26px; }
+  .popups { padding-block: 56px; }
+  .popups h2 { font-size: 28px; }
+  .find-us { padding: 28px; }
+  .find-us h2 { font-size: 24px; }
+  .page-intro { padding-top: 64px; }
+  .page-intro h1 { font-size: 40px; }
+  .team-grid { gap: 24px 20px; }
+  .member .initials { font-size: 36px; }
+  .menu-deals ul { grid-template-columns: 1fr 1fr; }
+  .menu-foot { flex-direction: row; align-items: center; justify-content: space-between; }
+  .menu-foot .btn { align-self: auto; }
+  .page-bottom { padding-bottom: 64px; }
+}
+
+@media (min-width: 768px) {
+  .upcoming { grid-template-columns: 1.1fr 1fr; gap: 40px; }
+  .upcoming-cta { margin-top: auto; padding-top: 24px; }
+  .story { grid-template-columns: repeat(3, 1fr); }
+  .mission .container { flex-direction: row; align-items: center; gap: 40px; }
+  .popup-grid { grid-template-columns: repeat(3, 1fr); }
+  .find-us { flex-direction: row; align-items: center; justify-content: space-between; }
+  .find-us .btn { align-self: auto; }
+  .team-grid { grid-template-columns: repeat(4, 1fr); }
+  .menu-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .menu-deals { margin-top: 24px; }
+}
+
+@media (min-width: 1024px) {
+  .hero h1 { font-size: 68px; }
+  .team-grid { grid-template-columns: repeat(5, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
