@@ -58,12 +58,12 @@ const EVENTS = [
 
 
 // ---------- Team ----------
-// group must be one of: Executive, Finance, Tech, Marketing, Operations
+// group must be one of: Executives or Members
 // photo is optional: upload a portrait image and write its file name, e.g. "jane.jpg"
 // Without a photo, the person's initials show instead.
 const TEAM = [
-  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "" },
-  { name: "First Last", role: "CTO", group: "Executives", photo: "", },
+  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "", bio: "" },
+  { name: "First Last", role: "CTO", group: "Executives", photo: "", bio: "" },
   { name: "First Last", role: "CFO", group: "Executives", photo: "", bio: "" },
   { name: "First Last", role: "CMO", group: "Executives", photo: "", bio: "" },
   { name: "First Last", role: "Secretary", group: "Executives", photo: "", bio: "" },
@@ -72,4 +72,4 @@ const TEAM = [
   { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
 ];
 
-const TEAM_GROUPS = ["Executive", "Finance", "Tech", "Marketing", "Operations"];
+const TEAM_GROUPS = ["Executives", "Members"];
