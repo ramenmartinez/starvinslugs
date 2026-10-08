@@ -62,12 +62,14 @@ const EVENTS = [
 // photo is optional: upload a portrait image and write its file name, e.g. "jane.jpg"
 // Without a photo, the person's initials show instead.
 const TEAM = [
-  { name: "First Last", role: "CEO", group: "Executive", photo: "", bio: "" },
-  { name: "First Last", role: "COO", group: "Executive", photo: "", bio: "" },
-  { name: "First Last", role: "CFO", group: "Finance", photo: "", bio: "" },
-  { name: "First Last", role: "CTO", group: "Tech", photo: "", bio: "" },
-  { name: "First Last", role: "Marketing Lead", group: "Marketing", photo: "", bio: "" },
-  { name: "First Last", role: "Operations Lead", group: "Operations", photo: "", bio: "" },
+  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "" },
+  { name: "First Last", role: "CTO", group: "Executives", photo: "", },
+  { name: "First Last", role: "CFO", group: "Executives", photo: "", bio: "" },
+  { name: "First Last", role: "CMO", group: "Executives", photo: "", bio: "" },
+  { name: "First Last", role: "Secretary", group: "Executives", photo: "", bio: "" },
+  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
+  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
+  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
 ];
 
 const TEAM_GROUPS = ["Executive", "Finance", "Tech", "Marketing", "Operations"];
