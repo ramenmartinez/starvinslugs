@@ -62,13 +62,21 @@ const EVENTS = [
 // Without a photo, the person's initials show instead.
 const TEAM = [
   { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "", bio: "" },
-  { name: "First Last", role: "CTO", group: "Executives", photo: "", bio: "" },
-  { name: "First Last", role: "CFO", group: "Executives", photo: "", bio: "" },
-  { name: "First Last", role: "CMO", group: "Executives", photo: "", bio: "" },
-  { name: "First Last", role: "Secretary", group: "Executives", photo: "", bio: "" },
-  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
-  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
-  { name: "First Last", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Anika Ranjan", role: "CTO", group: "Executives", photo: "", bio: "" },
+  { name: "Aarav Khedkar", role: "CFO", group: "Executives", photo: "", bio: "" },
+  { name: "Austin La", role: "CMO", group: "Executives", photo: "", bio: "" },
+  { name: "Shreeya Baghel", role: "Secretary", group: "Executives", photo: "", bio: "" },
+  { name: "Aanya Agarwal", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Brian Kuan", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Colton Chu", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Ella Magga", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Jay Bandaru", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Jerry Canaveral", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Justin Brinkman", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Kaelyn Gee", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Olivia Beissel", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Ramen Martinez", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Rishab Vemmula", role: "", group: "Members", photo: "", bio: "" },
 ];
 
 const TEAM_GROUPS = ["Executives", "Members"];
