@@ -62,8 +62,8 @@ const EVENTS = [
 // Without a photo, the person's initials show instead.
 const TEAM = [
   { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "YaaminiPutti.JPG", bio: "" },
-  { name: "Anika Ranjan", role: "CTO", group: "Executives", photo: "Anika.JPG", bio: "" },
   { name: "Aarav Khedkar", role: "CFO", group: "Executives", photo: "", bio: "" },
+  { name: "Anika Ranjan", role: "CTO", group: "Executives", photo: "Anika.JPG", bio: "" },
   { name: "Austin La", role: "CMO", group: "Executives", photo: "", bio: "" },
   { name: "Shreeya Baghel", role: "Secretary", group: "Executives", photo: "IMG_1720 2.jpg", bio: "" },
   { name: "Aanya Agarwal", role: "", group: "Members", photo: "Aanya.jpeg", bio: "" },
