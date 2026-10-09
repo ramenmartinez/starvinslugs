@@ -67,7 +67,7 @@ const TEAM = [
   { name: "Austin La", role: "CMO", group: "Executives", photo: "", bio: "" },
   { name: "Shreeya Baghel", role: "Secretary", group: "Executives", photo: "IMG_1720 2.jpg", bio: "" },
   { name: "Aanya Agarwal", role: "", group: "Members", photo: "Aanya.jpeg", bio: "" },
-  { name: "Brian Kuan", role: "", group: "Members", photo: "Brian .heif", bio: "" },
+  { name: "Brian Kuan", role: "", group: "Members", photo: "Brian.png", bio: "" },
   { name: "Colton Chu", role: "", group: "Members", photo: "", bio: "" },
   { name: "Ella Magga", role: "", group: "Members", photo: "", bio: "" },
   { name: "Jay Bandaru", role: "", group: "Members", photo: "", bio: "" },
