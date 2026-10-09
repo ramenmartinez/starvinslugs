@@ -61,7 +61,7 @@ const EVENTS = [
 // photo is optional: upload a portrait image and write its file name, e.g. "jane.jpg"
 // Without a photo, the person's initials show instead.
 const TEAM = [
-  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "", bio: "" },
+  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "YaaminiPutti.JPG", bio: "" },
   { name: "Anika Ranjan", role: "CTO", group: "Executives", photo: "Anika.JPG", bio: "" },
   { name: "Aarav Khedkar", role: "CFO", group: "Executives", photo: "", bio: "" },
   { name: "Austin La", role: "CMO", group: "Executives", photo: "", bio: "" },
@@ -73,7 +73,7 @@ const TEAM = [
   { name: "Jay Bandaru", role: "", group: "Members", photo: "", bio: "" },
   { name: "Jerry Canaveral", role: "", group: "Members", photo: "", bio: "" },
   { name: "Justin Brinkman", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Kaelyn Gee", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Kaelyn Gee", role: "", group: "Members", photo: "Kaelyn.png", bio: "" },
   { name: "Olivia Beissel", role: "", group: "Members", photo: "", bio: "" },
   { name: "Ramen Martinez", role: "", group: "Members", photo: "", bio: "" },
   { name: "Rishab Vemmula", role: "", group: "Members", photo: "", bio: "" },
