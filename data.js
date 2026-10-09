@@ -69,7 +69,7 @@ const TEAM = [
   { name: "Aanya Agarwal", role: "", group: "Members", photo: "Aanya.jpeg", bio: "" },
   { name: "Brian Kuan", role: "", group: "Members", photo: "Brian.png", bio: "" },
   { name: "Colton Chu", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Ella Magga", role: "", group: "Members", photo: "", bio: "" },
+  { name: "Ella Magga", role: "", group: "Members", photo: "Ella Magga Rho.jpeg", bio: "" },
   { name: "Jay Bandaru", role: "", group: "Members", photo: "", bio: "" },
   { name: "Jerry Canaveral", role: "", group: "Members", photo: "", bio: "" },
   { name: "Justin Brinkman", role: "", group: "Members", photo: "", bio: "" },
