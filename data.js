@@ -41,7 +41,7 @@ const MAP = {
 // ---------- Big photos around the site ----------
 const PHOTOS = {
   homeHero: "stand-pizza.jpg",   // team serving at the stand
-  aboutWhy: "",        // busy walkway / students between classes
+  aboutWhy: "stand-pizza.jpg",   // students between classes
   aboutWhat: "team-table.jpg",   // team at the table
   teamGroup: "team-photo.jpg",   // whole team group photo
 };
@@ -91,7 +91,7 @@ const MEMBERS = [
   { name: "Aanya Agarwal", photo: "hs-aanya.jpg" },
   { name: "Brian Kuan", photo: "hs-brian.jpg" },
   { name: "Ella Magga", photo: "hs-ella.jpg" },
-  { name: "Jayanth Bandaru", photo: "" },
+  { name: "Jayanth Bandaru", photo: "hs-jayanth.jpg" },
   { name: "Jerryko Canaveral", photo: "hs-jerryko.jpg" },
   { name: "Justin Brinkman", photo: "hs-justin.jpg" },
   { name: "Kaelyn Gee", photo: "hs-kaelyn.jpg" },
