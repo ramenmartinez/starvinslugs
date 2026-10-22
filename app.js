@@ -12,6 +12,7 @@ function el(tag, className, text) {
 
 function price(p) {
   if (p === null || p === undefined || p === "") return "";
+  if (typeof p === "string") return p;
   return Number.isInteger(p) ? "$" + p : "$" + p.toFixed(2);
 }
 
@@ -219,9 +220,31 @@ fill("request-form", function (form) {
       window.open(REQUEST_FORM_URL, "_blank");
       return;
     }
-    const body = "Type: " + kind + "\nWhat I'd like to see: " + what + (allergies ? "\nAllergies / food restrictions: " + allergies : "");
-    window.location.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent("Menu request: " + what) + "&body=" + encodeURIComponent(body);
-    msg.textContent = "Opening your email app to send this. Thanks!";
+    if (form.elements._honey.value) return; // bot filled the hidden field
+    const button = form.querySelector("button");
+    button.disabled = true;
+    msg.textContent = "Sending...";
+    fetch("https://formsubmit.co/ajax/" + SITE.email, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: "Menu request: " + what,
+        _template: "table",
+        _captcha: "false",
+        Type: kind,
+        "What they'd like to see": what,
+        "Allergies / food restrictions": allergies || "None",
+      }),
+    })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function () {
+        form.reset();
+        msg.textContent = "Thanks! Your request was sent.";
+      })
+      .catch(function () {
+        msg.textContent = "That didn't go through. Try again, or email us at " + SITE.email + ".";
+      })
+      .finally(function () { button.disabled = false; });
   });
   form.elements.what.addEventListener("input", function () { form.querySelector(".form-msg").textContent = ""; });
 });

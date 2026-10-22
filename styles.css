@@ -92,7 +92,8 @@ p { margin: 0; }
 /* ---------- Food tiles ---------- */
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
 .tile .photo { height: 230px; }
-.tile .cap { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; font-weight: 600; }
+.tile .cap { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; font-weight: 600; }
+.tile .cap span:last-child { color: var(--red-dark); }
 .tile.sold { opacity: .5; }
 .tile.sold .name { text-decoration: line-through; }
 

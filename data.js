@@ -52,16 +52,16 @@ const PHOTOS = {
 // soldOut: true shows the item faded and crossed out.
 const MENU_UPDATED = "October 21";
 
-// price: put a number like 5 or 5.5. Leave null to hide the price.
+// price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Veggie Bánh Mì", price: 7, photo: "banh-mi.jpg", soldOut: false },
-  { name: "Pork Bánh Mì", price: null, photo: "banh-mi.jpg", soldOut: false },
-  { name: "Chicken Bánh Mì", price: null, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi.jpg", soldOut: false },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Strawberry Mango Passionfruit Fruit Tea", price: null, photo: "fruit-tea.jpg", soldOut: false },
-  { name: "Rose Vanilla Milk Tea", price: null, photo: "milk-tea.jpg", soldOut: false },
+  { name: "Strawberry Mango Passionfruit Fruit Tea", price: 7, photo: "fruit-tea.jpg", soldOut: false },
+  { name: "Rose Vanilla Milk Tea", price: 7, photo: "milk-tea.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
@@ -110,6 +110,7 @@ const FAQ = [
 
 
 // ---------- Request form ----------
-// Leave "" and the form opens the visitor's email app with their request
-// filled in. If you make a Google Form later, put its link here instead.
+// Requests are sent straight to SITE.email through FormSubmit (formsubmit.co).
+// The very first request sends an "Activate Form" email to that inbox:
+// click the button in it once, and every request after that arrives normally.
 const REQUEST_FORM_URL = "";
