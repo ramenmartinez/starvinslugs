@@ -32,11 +32,11 @@ const NEXT_POPUP = {
 
 // ---------- Big photos around the site ----------
 const PHOTOS = {
-  homeHero: "",        // team serving at the stand, students in line
+  homeHero: "stand-pizza.jpg",   // team serving at the stand
   map: "",             // map or photo of your usual spot
   aboutWhy: "",        // busy walkway / students between classes
-  aboutWhat: "",       // team setting up or selling food
-  teamGroup: "",       // whole team at the stand
+  aboutWhat: "team-table.jpg",   // team at the table
+  teamGroup: "team-group.jpg",   // whole team at the stand
 };
 
 
@@ -47,7 +47,9 @@ const MENU_UPDATED = "October 21";
 
 // price: put a number like 5 or 5.5. Leave null to hide the price.
 const FOOD = [
-  { name: "Bánh mì", price: null, photo: "", soldOut: false },
+  { name: "Veggie bánh mì", price: 7, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Pork bánh mì", price: null, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Chicken bánh mì", price: null, photo: "banh-mi.jpg", soldOut: false },
 ];
 
 const DRINKS = [
@@ -62,9 +64,9 @@ const DEALS = [];
 // ---------- Past pop-ups (newest first) ----------
 // Home shows the first 3. About shows a bigger collage of the first 3.
 const POPUPS = [
+  { name: "Bánh mì pop-up", photo: "banh-mi-popup.jpg" },
   { name: "In-N-Out pop-up", photo: "" },
-  { name: "Costco pizza and hot dog pop-up", photo: "" },
-  { name: "Pizza and energy drink pop-up", photo: "" },
+  { name: "Costco pizza pop-up", photo: "team-group.jpg" },
 ];
 
 
