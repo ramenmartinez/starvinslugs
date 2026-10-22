@@ -1,17 +1,17 @@
-/* ---------- Colors & fonts (from the logo) ---------- */
+/* ---------- Colors & fonts (from the branding guide) ---------- */
 :root {
-  --red: #c42d35;
-  --red-dark: #8f1d22;
-  --yellow: #f9d343;
-  --cream: #fff8ee;
-  --sand: #f6ecdc;
-  --ink: #2a1414;
-  --muted: #6b4a4a;
-  --line: #ead9c4;
+  --red: #9f24c4;
+  --red-dark: #7a1b97;
+  --yellow: #ffd442;
+  --cream: #ffffff;
+  --sand: #f5eefa;
+  --ink: #241030;
+  --muted: #5e4a6b;
+  --line: #eadff2;
   --white: #ffffff;
 
-  --font-display: "Anton", Impact, sans-serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
+  --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --max: 1136px;
 }
 
@@ -55,11 +55,11 @@ p { margin: 0; }
 /* ---------- Photos & placeholders ---------- */
 .photo { position: relative; border-radius: 16px; overflow: hidden; background: var(--sand); }
 .photo img { width: 100%; height: 100%; object-fit: cover; }
-.photo.empty { display: flex; align-items: center; justify-content: center; border: 1.5px dashed #d8c3a5; }
+.photo.empty { display: flex; align-items: center; justify-content: center; border: 1.5px dashed #d5c3e3; }
 .photo.empty span { font-size: 13px; color: var(--muted); background: var(--cream); padding: 4px 10px; border-radius: 999px; text-align: center; max-width: 85%; }
 
 /* ---------- Header ---------- */
-.site-header { position: sticky; top: 0; z-index: 10; background: rgba(255, 248, 238, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.site-header { position: sticky; top: 0; z-index: 10; background: rgba(255, 255, 255, .94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 19px; color: var(--red-dark); }
 .brand img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; }
@@ -76,18 +76,18 @@ p { margin: 0; }
 
 /* ---------- Home: hero ---------- */
 .hero { display: grid; grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: center; padding-block: 64px; }
-.hero h1 { font-family: var(--font-display); font-weight: 400; font-size: 64px; line-height: 1.05; text-transform: uppercase; color: var(--red-dark); }
-.hero h1 mark { background: var(--yellow); color: var(--red-dark); padding: 0 8px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.hero h1 { font-family: var(--font-display); font-weight: 700; font-size: 64px; line-height: 1.18; text-transform: uppercase; color: var(--red-dark); }
+.hero h1 mark { background: var(--yellow); color: var(--red-dark); padding: 2px 10px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .hero p { font-size: 19px; color: var(--muted); margin: 22px 0 26px; max-width: 32ch; }
 .hero .photo { height: 460px; }
 
 /* ---------- Home: next pop-up band ---------- */
 .band { background: var(--red-dark); color: var(--white); }
 .band .wrap { display: grid; grid-template-columns: 1fr 1.3fr 300px; gap: 48px; align-items: center; padding-block: 48px; }
-.band .label { color: #f3c7c9; }
+.band .label { color: #e9cdf4; }
 .band .big { font-size: 32px; font-weight: 700; line-height: 1.15; }
 .band .photo { height: 170px; background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.35); }
-.band .photo.empty span { background: var(--red-dark); color: #f3c7c9; }
+.band .photo.empty span { background: var(--red-dark); color: #e9cdf4; }
 
 /* ---------- Food tiles ---------- */
 .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
@@ -107,10 +107,12 @@ p { margin: 0; }
 .split .photo { height: 380px; }
 .split p { margin-top: 14px; font-size: 18px; color: var(--muted); }
 .mission { background: var(--red-dark); color: var(--white); }
-.mission .label { color: #f3c7c9; }
+.mission .label { color: #e9cdf4; }
 .mission p { margin-top: 12px; font-size: 32px; line-height: 1.35; font-weight: 600; max-width: 30ch; }
 .collage { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 210px 210px; gap: 16px; }
 .collage .big { grid-row: 1 / 3; }
+.collage.two { grid-template-columns: 1fr 1fr; grid-template-rows: 320px; }
+.collage.two .big { grid-row: auto; }
 
 /* ---------- Menu ---------- */
 .menu-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -129,7 +131,7 @@ p { margin: 0; }
 .deals h3 { font-size: 20px; }
 .deals li { list-style: none; border-top: 1px solid rgba(255,255,255,.25); padding-top: 12px; display: flex; justify-content: space-between; gap: 12px; }
 .deals ul { margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
-.deals small { display: block; color: #f3c7c9; font-size: 14px; }
+.deals small { display: block; color: #e9cdf4; font-size: 14px; }
 
 .menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
 .stack { display: flex; flex-direction: column; gap: 20px; }
@@ -159,7 +161,7 @@ form { display: flex; flex-direction: column; gap: 14px; }
 fieldset { border: 0; margin: 0; padding: 0; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
 legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 .field { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; }
-.field input { height: 46px; border: 1.5px solid #d8c3a5; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400; background: var(--white); color: var(--ink); }
+.field input { height: 46px; border: 1.5px solid #d5c3e3; border-radius: 10px; padding: 0 12px; font: inherit; font-weight: 400; background: var(--white); color: var(--ink); }
 .radio { display: flex; gap: 6px; align-items: center; font-size: 15px; }
 .form-msg { font-size: 14px; font-weight: 600; color: var(--red-dark); }
 .faq { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 48px; }
@@ -199,6 +201,8 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
   .mission p { font-size: 22px; }
   .collage { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 120px; }
   .collage .big { grid-row: auto; grid-column: 1 / -1; }
+  .collage.two { grid-template-rows: 180px; }
+  .collage.two .big { grid-column: auto; }
   .menu-head h1 { font-size: 32px; }
   .cards3, .menu-cols { grid-template-columns: 1fr; }
   .stack .card .photo { height: 200px; }

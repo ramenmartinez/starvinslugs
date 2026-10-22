@@ -42,7 +42,7 @@ const MAP = {
 const PHOTOS = {
   homeHero: "stand-pizza.jpg",   // team serving at the stand
   aboutWhy: "about-walk.jpg",   // students between classes
-  aboutWhat: "about-stand.jpg",   // serving food at a stand
+  aboutWhat: "about-food.jpg",   // bánh mì
   teamGroup: "team-photo.jpg",   // whole team group photo
 };
 
@@ -72,7 +72,6 @@ const DEALS = [];
 // Home shows the first 3. About shows a bigger collage of the first 3.
 const POPUPS = [
   { name: "Bánh mì pop-up", photo: "banh-mi-popup.jpg" },
-  { name: "In-N-Out pop-up", photo: "" },
   { name: "Costco pizza pop-up", photo: "team-group.jpg" },
 ];
 

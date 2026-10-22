@@ -132,6 +132,7 @@ fill("home-menu", function (box) {
 
 // ---------- Home: recent pop-ups ----------
 fill("home-popups", function (box) {
+  box.style.gridTemplateColumns = "repeat(" + Math.min(POPUPS.length, 3) + ", minmax(0, 1fr))";
   POPUPS.slice(0, 3).forEach(function (p) {
     const d = el("div");
     d.append(photo(p.photo, p.name), el("div", "popup-cap", p.name));
@@ -141,6 +142,7 @@ fill("home-popups", function (box) {
 
 // ---------- About: pop-up collage ----------
 fill("about-popups", function (box) {
+  if (POPUPS.length === 2) box.classList.add("two");
   POPUPS.slice(0, 3).forEach(function (p, i) {
     box.appendChild(photo(p.photo, p.name, i === 0 ? "big" : ""));
   });
