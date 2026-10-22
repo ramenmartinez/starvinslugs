@@ -60,7 +60,8 @@ const FOOD = [
 ];
 
 const DRINKS = [
-  { name: "Boba", price: null, photo: "", soldOut: false },
+  { name: "Strawberry mango passionfruit fruit tea", price: null, photo: "", soldOut: false },
+  { name: "Rose vanilla milk tea", price: null, photo: "", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
