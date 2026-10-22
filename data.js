@@ -17,7 +17,7 @@ const SITE = {
   instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
   usualSpot: "Outside the Science & Engineering Library",
-  usualHours: "Around noon until we sell out",
+  usualHours: "around noon until we sell out",
   payment: "Zelle, Venmo, or cash",
 };
 
