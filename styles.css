@@ -226,5 +226,5 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 .map-link { position: absolute; right: 10px; bottom: 10px; background: var(--white); color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; padding: 6px 12px; border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
 .band .photo.map { height: 200px; }
 
-/* Pop-up photos: keep faces in frame */
-.popups3 .photo img { object-position: 50% 0%; }
+/* About pop-up collage: nudge photos up so faces aren't cut off */
+.collage .photo img { object-position: 50% 25%; }
