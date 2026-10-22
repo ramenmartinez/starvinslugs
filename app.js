@@ -11,6 +11,7 @@ function el(tag, className, text) {
 }
 
 function price(p) {
+  if (p === null || p === undefined || p === "") return "";
   return Number.isInteger(p) ? "$" + p : "$" + p.toFixed(2);
 }
 
@@ -150,7 +151,7 @@ fill("menu-drinks", function (box) {
   menuCards(DRINKS, box);
   if (DEALS.length) {
     const d = el("div", "deals");
-    d.appendChild(el("h3", "", "Two for $5 deals"));
+    d.appendChild(el("h3", "", "Combo deals"));
     const ul = el("ul");
     DEALS.forEach(function (deal) {
       const li = el("li");

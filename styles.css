@@ -90,7 +90,7 @@ p { margin: 0; }
 .band .photo.empty span { background: var(--red-dark); color: #f3c7c9; }
 
 /* ---------- Food tiles ---------- */
-.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
 .tile .photo { height: 230px; }
 .tile .cap { display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; font-weight: 600; }
 .tile.sold { opacity: .5; }
@@ -131,6 +131,11 @@ p { margin: 0; }
 .deals ul { margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .deals small { display: block; color: #f3c7c9; font-size: 14px; }
 
+.menu-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.stack { display: flex; flex-direction: column; gap: 20px; }
+.stack .card .photo { height: 300px; }
+.stack .deals { margin-top: 0; }
+
 /* ---------- Team ---------- */
 .team-top { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; align-items: center; }
 .team-top h1 { font-size: 44px; font-weight: 700; }
@@ -166,7 +171,6 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 @media (max-width: 960px) {
   .band .wrap { grid-template-columns: 1fr 1fr; }
   .band .photo { grid-column: 1 / -1; }
-  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .faq { grid-template-columns: 1fr; }
 }
 
@@ -196,7 +200,8 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
   .collage { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 120px; }
   .collage .big { grid-row: auto; grid-column: 1 / -1; }
   .menu-head h1 { font-size: 32px; }
-  .cards3 { grid-template-columns: 1fr; }
+  .cards3, .menu-cols { grid-template-columns: 1fr; }
+  .stack .card .photo { height: 200px; }
   .card .photo { height: 180px; }
   .team-top h1 { font-size: 34px; }
   .team-top .photo { height: 240px; }

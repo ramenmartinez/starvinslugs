@@ -45,21 +45,18 @@ const PHOTOS = {
 // soldOut: true shows the item faded and crossed out.
 const MENU_UPDATED = "October 21";
 
+// price: put a number like 5 or 5.5. Leave null to hide the price.
 const FOOD = [
-  { name: "Pepperoni Pizza", price: 3, photo: "", soldOut: false },
-  { name: "Cheese Pizza", price: 3, photo: "", soldOut: false },
-  { name: "Hot Dog", price: 3, photo: "", soldOut: false },
+  { name: "Bánh mì", price: null, photo: "", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Energy drink", note: "Monster or Celsius", price: 3, photo: "", soldOut: false },
+  { name: "Boba", price: null, photo: "", soldOut: false },
 ];
 
-// Delete everything inside [ ] to hide the deals box.
-const DEALS = [
-  { name: "Drink + pizza", description: "Any energy drink and a slice of pizza", price: 5 },
-  { name: "Drink + hot dog", description: "Any energy drink and a hot dog", price: 5 },
-];
+// Combo deals. Empty [ ] hides the deals box. Example:
+// { name: "Bánh mì + boba", description: "Any bánh mì and a boba", price: 10 },
+const DEALS = [];
 
 
 // ---------- Past pop-ups (newest first) ----------
