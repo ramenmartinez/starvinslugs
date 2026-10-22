@@ -79,25 +79,25 @@ const POPUPS = [
 
 // ---------- Team ----------
 const EXECUTIVES = [
-  { name: "First Last", role: "CEO", photo: "" },
-  { name: "First Last", role: "CFO", photo: "" },
-  { name: "First Last", role: "CTO", photo: "" },
-  { name: "First Last", role: "CMO", photo: "" },
-  { name: "First Last", role: "Secretary", photo: "" },
-  { name: "First Last", role: "Head of HR", photo: "" },
+  { name: "Yaamini Putti", role: "CEO", photo: "hs-yaamini.jpg" },
+  { name: "Aarav Khedkar", role: "CFO", photo: "hs-aarav.jpg" },
+  { name: "Anika Ranjan", role: "CTO", photo: "hs-anika.jpg" },
+  { name: "Austin La", role: "CMO", photo: "hs-austin.jpg" },
+  { name: "Shreeya Baghel", role: "Secretary", photo: "hs-shreeya.jpg" },
+  { name: "Colton Chu", role: "Head of HR", photo: "hs-colton.jpg" },
 ];
 
 const MEMBERS = [
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
-  { name: "First Last", photo: "" },
+  { name: "Aanya Agarwal", photo: "hs-aanya.jpg" },
+  { name: "Brian Kuan", photo: "hs-brian.jpg" },
+  { name: "Ella Magga", photo: "hs-ella.jpg" },
+  { name: "Jayanth Bandaru", photo: "" },
+  { name: "Jerryko Canaveral", photo: "hs-jerryko.jpg" },
+  { name: "Justin Brinkman", photo: "hs-justin.jpg" },
+  { name: "Kaelyn Gee", photo: "hs-kaelyn.jpg" },
+  { name: "Olivia Beissel", photo: "hs-olivia.jpg" },
+  { name: "Ramen Martinez", photo: "hs-ramen.jpg" },
+  { name: "Rishab Vemula", photo: "hs-rishab.jpg" },
 ];
 
 
