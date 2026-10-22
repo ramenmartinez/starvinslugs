@@ -54,14 +54,14 @@ const MENU_UPDATED = "October 21";
 
 // price: put a number like 5 or 5.5. Leave null to hide the price.
 const FOOD = [
-  { name: "Veggie bánh mì", price: 7, photo: "banh-mi.jpg", soldOut: false },
-  { name: "Pork bánh mì", price: null, photo: "banh-mi.jpg", soldOut: false },
-  { name: "Chicken bánh mì", price: null, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: 7, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Pork Bánh Mì", price: null, photo: "banh-mi.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: null, photo: "banh-mi.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Strawberry mango passionfruit fruit tea", price: null, photo: "", soldOut: false },
-  { name: "Rose vanilla milk tea", price: null, photo: "", soldOut: false },
+  { name: "Strawberry Mango Passionfruit Fruit Tea", price: null, photo: "fruit-tea.jpg", soldOut: false },
+  { name: "Rose Vanilla Milk Tea", price: null, photo: "milk-tea.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
@@ -72,8 +72,8 @@ const DEALS = [];
 // ---------- Past pop-ups (newest first) ----------
 // Home shows the first 3. About shows a bigger collage of the first 3.
 const POPUPS = [
-  { name: "Bánh mì pop-up", photo: "banh-mi-popup.jpg" },
-  { name: "Costco pizza pop-up", photo: "team-group.jpg" },
+  { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg" },
+  { name: "Costco Pizza Pop-Up", photo: "team-group.jpg" },
 ];
 
 
