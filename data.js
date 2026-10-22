@@ -1,38 +1,58 @@
 // ============================================================
 //  STARVINSLUGS SITE CONTENT
-//  Edit the text between the quotes, then save / commit.
+//  Almost everything you'll update lives in this one file.
+//  Only change the text between the quotes "like this".
+//
+//  PHOTOS: upload the image to the GitHub repo (same place as
+//  this file), then type its file name, e.g. photo: "pizza.jpg".
+//  Leave photo: "" to show a gray placeholder.
 // ============================================================
 
 
-// ---------- Basics ----------
+// ---------- Contact info (used in the footer and Contact page) ----------
 const SITE = {
-  instagramHandle: "@starvinslugs",
+  email: "starvinslugs7@gmail.com",
+  phone: "(831) 508-8689",
+  phoneLink: "+18315088689",
+  instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
-  location: "Science & Engineering Library",
+  usualSpot: "Outside the Science & Engineering Library",
+  usualHours: "12pm until we sell out",
+  payment: "Zelle, Venmo, or cash",
 };
 
 
-// ---------- Upcoming fundraiser (card on the home page) ----------
-// Set to null to hide it after the event:   const UPCOMING = null;
-const UPCOMING = {
-  title: "Pizza, hot dog & energy drink fundraiser",
-  date: "Thursday, October 8",
+// ---------- Next pop-up (dark band on the Home page) ----------
+const NEXT_POPUP = {
   location: "Science & Engineering Library",
-  details: "Everything is $3, or pick any two for $5. Follow our Instagram for hours and the energy drink lineup.",
+  time: "12pm until we sell out",
+  howToSpot: "Look for our table out front.",
+};
+
+
+// ---------- Big photos around the site ----------
+const PHOTOS = {
+  homeHero: "",        // team serving at the stand, students in line
+  map: "",             // map or photo of your usual spot
+  aboutWhy: "",        // busy walkway / students between classes
+  aboutWhat: "",       // team setting up or selling food
+  teamGroup: "",       // whole team at the stand
 };
 
 
 // ---------- Menu ----------
-// soldOut: true  -> item shows faded and crossed out
-// note is optional (small gray text next to the name)
-const DRINKS = [
-  { name: "Energy drink", price: 3, note: "Monster or Celsius variety", soldOut: false },
-];
+// The first 4 items (food first, then drinks) also show on the Home page.
+// soldOut: true shows the item faded and crossed out.
+const MENU_UPDATED = "October 21";
 
 const FOOD = [
-  { name: "Pepperoni Pizza", price: 3, soldOut: false },
-  { name: "Cheese Pizza", price: 3, soldOut: false },
-  { name: "Hot Dog", price: 3, soldOut: false },
+  { name: "Pepperoni Pizza", price: 3, photo: "", soldOut: false },
+  { name: "Cheese Pizza", price: 3, photo: "", soldOut: false },
+  { name: "Hot Dog", price: 3, photo: "", soldOut: false },
+];
+
+const DRINKS = [
+  { name: "Energy drink", note: "Monster or Celsius", price: 3, photo: "", soldOut: false },
 ];
 
 // Delete everything inside [ ] to hide the deals box.
@@ -42,41 +62,48 @@ const DEALS = [
 ];
 
 
-// ---------- Recent pop-ups (home page) ----------
-// Newest at the TOP. Only the first 3 show.
-// photo is optional: upload the image to the repo and write its file name, e.g. "popup-oct8.jpg"
-const EVENTS = [
-  {
-    title: "Pizza & Energy Drink Pop-up",
-    date: "October 2026",
-    location: "Science & Engineering Library",
-    recap: "Our first pop-up. Pepperoni and cheese slices, Celsius and White Monster, right outside the library.",
-    photo: "",
-  },
+// ---------- Past pop-ups (newest first) ----------
+// Home shows the first 3. About shows a bigger collage of the first 3.
+const POPUPS = [
+  { name: "In-N-Out pop-up", photo: "" },
+  { name: "Costco pizza and hot dog pop-up", photo: "" },
+  { name: "Pizza and energy drink pop-up", photo: "" },
 ];
 
 
 // ---------- Team ----------
-// group must be one of: Executives or Members
-// photo is optional: upload a portrait image and write its file name, e.g. "jane.jpg"
-// Without a photo, the person's initials show instead.
-const TEAM = [
-  { name: "Yaamini Putti", role: "CEO", group: "Executives", photo: "YaaminiPutti.JPG", bio: "" },
-  { name: "Aarav Khedkar", role: "CFO", group: "Executives", photo: "", bio: "" },
-  { name: "Anika Ranjan", role: "CTO", group: "Executives", photo: "Anika.JPG", bio: "" },
-  { name: "Austin La", role: "CMO", group: "Executives", photo: "", bio: "" },
-  { name: "Shreeya Baghel", role: "Secretary", group: "Executives", photo: "IMG_1720 2.jpg", bio: "" },
-  { name: "Colton Chu", role: "Head of HR", group: "Executives", photo: "", bio: "" },
-  { name: "Aanya Agarwal", role: "", group: "Members", photo: "Aanya.jpeg", bio: "" },
-  { name: "Brian Kuan", role: "", group: "Members", photo: "Brian.png", bio: "" },
-  { name: "Ella Magga", role: "", group: "Members", photo: "Ella Magga Rho.jpeg", bio: "" },
-  { name: "Jay Bandaru", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Jerry Canaveral", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Justin Brinkman", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Kaelyn Gee", role: "", group: "Members", photo: "Kaelyn.png", bio: "" },
-  { name: "Olivia Beissel", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Ramen Martinez", role: "", group: "Members", photo: "", bio: "" },
-  { name: "Rishab Vemmula", role: "", group: "Members", photo: "", bio: "" },
+const EXECUTIVES = [
+  { name: "First Last", role: "CEO", photo: "" },
+  { name: "First Last", role: "CFO", photo: "" },
+  { name: "First Last", role: "CTO", photo: "" },
+  { name: "First Last", role: "CMO", photo: "" },
+  { name: "First Last", role: "Secretary", photo: "" },
+  { name: "First Last", role: "Head of HR", photo: "" },
 ];
 
-const TEAM_GROUPS = ["Executives", "Members"];
+const MEMBERS = [
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+  { name: "First Last", photo: "" },
+];
+
+
+// ---------- Common questions (Contact page) ----------
+const FAQ = [
+  { q: "How do I pay?", a: "Zelle, Venmo, or cash." },
+  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from 12pm until we sell out. The next pop-up is always on the Home page." },
+  { q: "Can I pre-order?", a: "Yes! Text us at (831) 508-8689 or DM us on Instagram @starvinslugs." },
+];
+
+
+// ---------- Request form ----------
+// Leave "" and the form opens the visitor's email app with their request
+// filled in. If you make a Google Form later, put its link here instead.
+const REQUEST_FORM_URL = "";

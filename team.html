@@ -3,51 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Team - StarvinSlugs</title>
-  <meta name="description" content="Meet the founding team of UCSC students behind StarvinSlugs.">
-  <meta name="theme-color" content="#FAFAF6">
-  <link rel="icon" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
+  <title>Team — StarvinSlugs</title>
+  <meta name="description" content="The students behind StarvinSlugs.">
+  <meta name="theme-color" content="#fff8ee">
+  <link rel="icon" href="logo.png?v=2">
+  <link rel="apple-touch-icon" href="logo.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="team">
+<main>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="">
-        <span>StarvinSlugs</span>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">About</a>
-        <a href="team.html" aria-current="page">Team</a>
-        <a href="menu.html">Menu</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container page-bottom">
-    <header class="page-intro">
+  <section class="wrap section team-top">
+    <div>
       <h1>The people behind the table</h1>
-      <p class="desc">A founding team of UCSC students managing every part of the business, from sourcing and pricing to marketing and operations.</p>
-    </header>
-
-    <div class="team-groups" id="team"></div>
-
-    <p class="card closed-note">We are a closed founding team and are not accepting new members at this time. Thank you for your interest.</p>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span data-year></span> StarvinSlugs · UC Santa Cruz</p>
-      <a data-ig target="_blank" rel="noopener noreferrer">Instagram <span data-ig-handle></span></a>
+      <p class="muted" style="margin-top:14px">Sixteen students running every part of the stand, from buying supplies to serving the line.</p>
     </div>
-  </footer>
+    <div data-photo="teamGroup" data-label="Group photo: the whole team at the stand"></div>
+  </section>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <section class="wrap" style="padding-bottom:64px">
+    <h2 class="h2" style="font-size:24px;margin-bottom:24px">Executives</h2>
+    <div class="people" id="team-execs"></div>
+    <hr class="divider">
+    <h2 class="h2" style="font-size:24px;margin-bottom:24px">Members</h2>
+    <div class="people" id="team-members"></div>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

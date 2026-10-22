@@ -3,60 +3,47 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Menu - StarvinSlugs</title>
-  <meta name="description" content="Affordable pizza, hot dogs, and energy drinks at UC Santa Cruz. Everything is $3, or two for $5.">
-  <meta name="theme-color" content="#FAFAF6">
-  <link rel="icon" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
+  <title>Menu — StarvinSlugs</title>
+  <meta name="description" content="This week's StarvinSlugs menu.">
+  <meta name="theme-color" content="#fff8ee">
+  <link rel="icon" href="logo.png?v=2">
+  <link rel="apple-touch-icon" href="logo.png?v=2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="menu">
+<main>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="">
-        <span>StarvinSlugs</span>
-      </a>
-      <nav class="nav" aria-label="Main">
-        <a href="index.html">About</a>
-        <a href="team.html">Team</a>
-        <a href="menu.html" aria-current="page">Menu</a>
-      </nav>
+  <section class="wrap section" style="padding-bottom:32px">
+    <div class="menu-head">
+      <div>
+        <h1>This week's menu</h1>
+        <p class="muted" style="margin-top:6px">Updated <span data-fill="MENU_UPDATED"></span> · Menu changes each pop-up</p>
+      </div>
+      <div class="chip">
+        <div><span class="label">Where</span><b data-fill="NEXT_POPUP.location"></b></div>
+        <div><span class="label">When</span><b data-fill="NEXT_POPUP.time"></b></div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main class="container page-bottom">
-    <header class="page-intro">
-      <p class="label">Current menu</p>
-      <h1>Our menu</h1>
-      <p class="desc">Items may vary by day. Check our Instagram for today's availability.</p>
-    </header>
+  <section class="wrap" style="padding-bottom:40px">
+    <h2 class="h2" style="font-size:24px;margin-bottom:16px">Food</h2>
+    <div class="cards3" id="menu-food"></div>
+  </section>
 
-    <div class="menu-grid" id="menu"></div>
+  <section class="wrap" style="padding-bottom:40px">
+    <h2 class="h2" style="font-size:24px;margin-bottom:16px">Drinks &amp; deals</h2>
+    <div class="cards3" id="menu-drinks"></div>
+  </section>
 
-    <section class="menu-deals" id="menu-deals">
-      <h2>Two for $5 deals</h2>
-      <ul></ul>
-    </section>
-
-    <div class="menu-foot">
-      <p>Find us at <span data-location>Science &amp; Engineering Library</span></p>
-      <a class="btn btn-secondary" data-ig target="_blank" rel="noopener noreferrer">Today's hours on Instagram</a>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span data-year></span> StarvinSlugs · UC Santa Cruz</p>
-      <a data-ig target="_blank" rel="noopener noreferrer">Instagram <span data-ig-handle></span></a>
-    </div>
-  </footer>
-
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <section class="wrap" style="padding-bottom:64px">
+    <p style="border-top:1.5px solid var(--line);padding-top:22px">Have an idea for the menu? <a class="link" href="contact.html">Request an item →</a></p>
+  </section>
+</main>
+<script src="data.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

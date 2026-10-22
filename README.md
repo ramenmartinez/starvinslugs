@@ -1,22 +1,16 @@
-# StarvinSlugs
+# StarvinSlugs website
 
-We are StarvinSlugs, a student-run snack and drink business at UC Santa Cruz.
-StarvinSlugs makes snacks and drinks easy to get for UCSC students. We run a student-led business that meets students where they are in high traffic areas, builds community through food, and raises funds to bring even better offerings on campus.
-
-
+Plain HTML, CSS and JavaScript. No build step.
 
 ## Updating the site
-Our main information is present in **`data.js`**:
-- Menu items, prices, sold-out items, and deals
-- Upcoming fundraiser card (set `UPCOMING = null` to hide it)
-- Recent pop-ups
-- Team members
-- Instagram link and location
+Almost everything lives in **data.js**: contact info, next pop-up, menu and prices,
+deals, past pop-ups, team names, common questions, and photo file names.
 
-To add a photo, upload the image to the repo and put its file name in `data.js`
-(for example `photo: "bob.jpg"`).
+To add a photo: upload the image to this repo, then put its file name in data.js
+(for example `photo: "pizza.jpg"`).
 
-Page text lives in `index.html`, `team.html`, and `menu.html`. Colors and fonts are at the top of `styles.css`.
+Page wording lives in index.html, about.html, menu.html, team.html, and contact.html.
+Colors and fonts are at the top of styles.css.
 
 ## Hosting
-Hosted on Vercel. Every commit to `main` updates the live site automatically.
+Hosted on Vercel. Every commit to main updates the live site.
