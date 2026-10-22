@@ -104,7 +104,7 @@ const MEMBERS = [
 // ---------- Common questions (Contact page) ----------
 const FAQ = [
   { q: "How do I pay?", a: "Zelle, Venmo, or cash." },
-  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from 12pm until we sell out. The next pop-up is always on the Home page." },
+  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from around noon until we sell out. The next pop-up is always on the Home page." },
   { q: "Can I pre-order?", a: "Yes! Text us at (831) 508-8689 or DM us on Instagram @starvinslugs." },
 ];
 
