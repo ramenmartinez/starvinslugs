@@ -99,6 +99,21 @@ document.querySelectorAll("[data-email]").forEach(function (a) { a.href = "mailt
 document.querySelectorAll("[data-tel]").forEach(function (a) { a.href = "tel:" + SITE.phoneLink; });
 
 // ---------- Big photos ----------
+// Map spots get a real Google Map
+document.querySelectorAll('[data-photo="map"]').forEach(function (slot) {
+  const box = el("div", "photo map");
+  const frame = el("iframe");
+  frame.src = MAP.embed;
+  frame.title = "Map: " + SITE.usualSpot;
+  frame.referrerPolicy = "no-referrer-when-downgrade";
+  const link = el("a", "map-link", "Open in Google Maps");
+  link.href = MAP.link;
+  link.target = "_blank";
+  link.rel = "noopener";
+  box.append(frame, link);
+  slot.replaceWith(box);
+});
+
 document.querySelectorAll("[data-photo]").forEach(function (slot) {
   slot.replaceWith(photo(PHOTOS[slot.dataset.photo], slot.dataset.label || "Photo", slot.className));
 });

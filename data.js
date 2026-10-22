@@ -30,13 +30,20 @@ const NEXT_POPUP = {
 };
 
 
+// ---------- Map (Home "Next pop-up" band and About "Where to find us") ----------
+// To move the pin, change the place name after "q=" (use + for spaces).
+const MAP = {
+  embed: "https://www.google.com/maps?q=Science+and+Engineering+Library,+Santa+Cruz,+CA&z=17&output=embed",
+  link: "https://www.google.com/maps/search/?api=1&query=Science+and+Engineering+Library+Santa+Cruz+CA",
+};
+
+
 // ---------- Big photos around the site ----------
 const PHOTOS = {
   homeHero: "stand-pizza.jpg",   // team serving at the stand
-  map: "",             // map or photo of your usual spot
   aboutWhy: "",        // busy walkway / students between classes
   aboutWhat: "team-table.jpg",   // team at the table
-  teamGroup: "team-group.jpg",   // whole team at the stand
+  teamGroup: "team-photo.jpg",   // whole team group photo
 };
 
 
