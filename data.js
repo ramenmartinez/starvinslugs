@@ -25,7 +25,7 @@ const SITE = {
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   location: "Science & Engineering Library",
-  time: "12pm until we sell out",
+  time: "1:15pm until we sell out",
   howToSpot: "Look for our table out front.",
 };
 
