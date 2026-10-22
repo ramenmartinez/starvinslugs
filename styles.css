@@ -218,8 +218,6 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
-/* Food photos: favor the lower part of the shot, where the food usually is */
-.card .photo img, .tile .photo img { object-position: 35% 75%; }
 
 /* Google Map */
 .photo.map { background: var(--sand); }
