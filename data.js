@@ -17,7 +17,7 @@ const SITE = {
   instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
   usualSpot: "Outside the Science & Engineering Library",
-  usualHours: "around noon until we sell out",
+  usualHours: "1:15pm until we sell out",
   payment: "Zelle, Venmo, or cash",
 };
 
@@ -79,32 +79,32 @@ const POPUPS = [
 
 // ---------- Team ----------
 const EXECUTIVES = [
-  { name: "Yaamini Putti", role: "CEO", photo: "hs-yaamini.jpg" },
-  { name: "Aarav Khedkar", role: "CFO", photo: "hs-aarav.jpg" },
-  { name: "Anika Ranjan", role: "CTO", photo: "hs-anika.jpg" },
-  { name: "Austin La", role: "CMO", photo: "hs-austin.jpg" },
-  { name: "Shreeya Baghel", role: "Secretary", photo: "hs-shreeya.jpg" },
-  { name: "Colton Chu", role: "Head of HR", photo: "hs-colton.jpg" },
+  { name: "Shreeya Baghel", role: "CEO", photo: "hs-shreeya.jpg" },
+  { name: "Justin Brinkman", role: "CFO", photo: "hs-justin.jpg" },
+  { name: "Ramen Martinez", role: "CTO", photo: "hs-ramen.jpg" },
+  { name: "Rishab Vemula", role: "CMO", photo: "hs-rishab.jpg" },
+  { name: "Brian Kuan", role: "Secretary", photo: "hs-brian.jpg" },
+  { name: "Ella Magga", role: "Head of HR", photo: "hs-ella.jpg" },
 ];
 
 const MEMBERS = [
   { name: "Aanya Agarwal", photo: "hs-aanya.jpg" },
-  { name: "Brian Kuan", photo: "hs-brian.jpg" },
-  { name: "Ella Magga", photo: "hs-ella.jpg" },
+  { name: "Aarav Khedkar", photo: "hs-aarav.jpg" },
+  { name: "Anika Ranjan", photo: "hs-anika.jpg" },
+  { name: "Austin La", photo: "hs-austin.jpg" },
+  { name: "Colton Chu", photo: "hs-colton.jpg" },
   { name: "Jayanth Bandaru", photo: "hs-jayanth.jpg" },
   { name: "Jerryko Canaveral", photo: "hs-jerryko.jpg" },
-  { name: "Justin Brinkman", photo: "hs-justin.jpg" },
   { name: "Kaelyn Gee", photo: "hs-kaelyn.jpg" },
   { name: "Olivia Beissel", photo: "hs-olivia.jpg" },
-  { name: "Ramen Martinez", photo: "hs-ramen.jpg" },
-  { name: "Rishab Vemula", photo: "hs-rishab.jpg" },
+  { name: "Yaamini Putti", photo: "hs-yaamini.jpg" },
 ];
 
 
 // ---------- Common questions (Contact page) ----------
 const FAQ = [
   { q: "How do I pay?", a: "Zelle, Venmo, or cash." },
-  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from around noon until we sell out. The next pop-up is always on the Home page." },
+  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from 1:15pm until we sell out. The next pop-up is always on the Home page." },
   { q: "Can I pre-order?", a: "Yes! Text us at (831) 508-8689 or DM us on Instagram @starvinslugs." },
 ];
 

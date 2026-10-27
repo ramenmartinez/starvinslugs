@@ -63,9 +63,64 @@ function fill(id, build) {
     if (pg[0].toLowerCase() === current) a.setAttribute("aria-current", "page");
     nav.appendChild(a);
   });
-  wrap.append(brand, nav);
+  // Phones: three-line button that slides out a menu from the right
+  const toggle = el("button", "menu-toggle");
+  toggle.type = "button";
+  toggle.setAttribute("aria-label", "Open menu");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "drawer");
+  toggle.append(el("span"), el("span"), el("span"));
+  wrap.append(brand, nav, toggle);
   header.appendChild(wrap);
   document.body.prepend(header);
+
+  const backdrop = el("div", "drawer-backdrop");
+  const drawer = el("div", "drawer");
+  drawer.id = "drawer";
+  drawer.setAttribute("role", "dialog");
+  drawer.setAttribute("aria-modal", "true");
+  drawer.setAttribute("aria-label", "Menu");
+  const top = el("div", "drawer-top");
+  const close = el("button", "drawer-close", "×");
+  close.type = "button";
+  close.setAttribute("aria-label", "Close menu");
+  top.append(el("span", "label", "Menu"), close);
+  const links = el("nav");
+  links.setAttribute("aria-label", "Mobile");
+  pages.forEach(function (pg) {
+    const a = el("a", "", pg[0]);
+    a.href = pg[1];
+    if (pg[0].toLowerCase() === current) a.setAttribute("aria-current", "page");
+    links.appendChild(a);
+  });
+  const foot = el("div", "drawer-foot");
+  const ig = el("a", "", "Instagram " + SITE.instagram);
+  ig.href = SITE.instagramUrl;
+  ig.target = "_blank";
+  ig.rel = "noopener";
+  const mail = el("a", "", SITE.email);
+  mail.href = "mailto:" + SITE.email;
+  foot.append(el("span", "", SITE.usualSpot + " · " + SITE.usualHours), ig, mail);
+  drawer.append(top, links, foot);
+  document.body.append(backdrop, drawer);
+
+  function setOpen(open) {
+    drawer.classList.toggle("open", open);
+    backdrop.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+    if (open) close.focus();
+    else if (document.activeElement && drawer.contains(document.activeElement)) toggle.focus();
+  }
+  toggle.addEventListener("click", function () { setOpen(true); });
+  close.addEventListener("click", function () { setOpen(false); });
+  backdrop.addEventListener("click", function () { setOpen(false); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && drawer.classList.contains("open")) setOpen(false);
+  });
+  window.matchMedia("(min-width: 721px)").addEventListener("change", function (e) {
+    if (e.matches) setOpen(false);
+  });
 })();
 
 // ---------- Footer ----------
