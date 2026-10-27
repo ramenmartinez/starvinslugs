@@ -41,8 +41,8 @@ const MAP = {
 // ---------- Big photos around the site ----------
 const PHOTOS = {
   homeHero: "home-hero.jpg",   // team with bánh mì and boba
-  aboutWhy: "about-walk.jpg",   // students between classes
-  aboutWhat: "about-food.jpg",   // bánh mì
+  aboutWhy: "about-team-boba.jpg",   // team with boba and bánh mì
+  aboutWhat: "about-serving.jpg",   // serving students at the table
   teamGroup: "team-photo.jpg",   // whole team group photo
 };
 
