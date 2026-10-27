@@ -50,18 +50,21 @@ const PHOTOS = {
 // ---------- Menu ----------
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
-const MENU_UPDATED = "October 21";
+// note: small gray line under the name, like where the item is from.
+const MENU_UPDATED = "October 27";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
   { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
   { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Strawberry Mango Passionfruit Fruit Tea", price: 7, photo: "fruit-tea.jpg", soldOut: false },
-  { name: "Rose Vanilla Milk Tea", price: 7, photo: "milk-tea.jpg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasmine-milk-tea.jpg", soldOut: false },
+  { name: "Taro Lover Milk Tea", price: 7, photo: "taro-milk-tea.jpg", soldOut: false },
+  { name: "Lychee on Lychee", price: 7, photo: "lychee-tea.jpg", soldOut: false },
+  { name: "Classic Thai Tea", price: 7, photo: "thai-tea.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
@@ -72,6 +75,7 @@ const DEALS = [];
 // ---------- Past pop-ups (newest first) ----------
 // Home shows the first 3. About shows a bigger collage of the first 3.
 const POPUPS = [
+  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg" },
   { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg" },
   { name: "Costco Pizza Pop-Up", photo: "team-group.jpg" },
 ];
