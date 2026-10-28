@@ -51,7 +51,7 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "October 27";
+const MENU_UPDATED = "October 28";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
