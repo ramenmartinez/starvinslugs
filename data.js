@@ -75,6 +75,7 @@ const DEALS = [];
 // ---------- Past pop-ups (newest first) ----------
 // Home shows the first 3. About shows a bigger collage of the first 3.
 const POPUPS = [
+  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg" },
   { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg" },
   { name: "Costco Pizza Pop-Up", photo: "team-group.jpg" },
 ];
