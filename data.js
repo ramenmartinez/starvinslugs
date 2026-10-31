@@ -79,9 +79,12 @@ const DEALS = [];
 
 
 // ---------- Past pop-ups (newest first) ----------
-// Home shows the first 3. About shows a bigger collage of the first 3.
+// Home shows the first 3 (skipping aboutOnly ones). About shows up to 5 in a bigger collage.
+// focus: optional, which part of the photo to keep when it gets cropped.
 const POPUPS = [
+  { name: "Bánh Mì & Boba Pop-Up", photo: "popup-banh-mi-boba.jpg" },
   { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg" },
+  { name: "Boba Pop-Up", photo: "popup-request-form.jpg", focus: "50% 15%", aboutOnly: true },
   { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg" },
   { name: "Costco Pizza Pop-Up", photo: "team-group.jpg" },
 ];
