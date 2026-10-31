@@ -183,7 +183,7 @@ if (TBD) {
   if (cols) {
     const sec = el("section", "wrap");
     sec.style.paddingBottom = "40px";
-    sec.append(tbdBox(), el("h2", "h2 last-title", "Last fundraiser's menu"), el("p", "muted", "This is what we served last time, so you can get an idea. The next menu may change."));
+    sec.append(tbdBox(), el("h2", "h2 last-title", "Last fundraiser's menu"), el("p", "muted", "Here's what we served at our last pop-up. The next menu may change."));
     cols.before(sec);
   }
   const note = document.querySelector(".menu-head p.muted");
@@ -193,7 +193,7 @@ if (TBD) {
   const homeTitle = document.getElementById("home-menu-title");
   if (homeTitle) {
     homeTitle.textContent = "Last fundraiser's menu";
-    const line = el("p", "muted", "Next menu TBD. This is what we served last time, so you can get an idea.");
+    const line = el("p", "muted", "Next menu TBD. Here's what we served at our last pop-up.");
     line.style.marginBottom = "24px";
     document.getElementById("home-menu").before(line);
     homeTitle.parentElement.style.marginBottom = "6px";
