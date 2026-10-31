@@ -5,11 +5,11 @@
 
 // Days with no pop-up: data.js sets MENU_TBD = true
 const TBD = typeof MENU_TBD !== "undefined" && MENU_TBD;
-const FOLLOW_TEXT = "Follow " + SITE.instagram + " on Instagram for the next pop-up.";
+const CHECK_BACK_TEXT = "Check back here for our next pop-up.";
 if (TBD) {
   NEXT_POPUP.location = "Location TBD";
   NEXT_POPUP.time = "Time TBD";
-  NEXT_POPUP.howToSpot = FOLLOW_TEXT;
+  NEXT_POPUP.howToSpot = CHECK_BACK_TEXT;
 }
 const SPOT_LINE = TBD ? "Next pop-up: location and time TBD" : SITE.usualSpot + " · " + SITE.usualHours;
 
@@ -167,13 +167,7 @@ document.querySelectorAll("[data-tel]").forEach(function (a) { a.href = "tel:" +
 // ---------- No pop-up today: swap in the TBD versions ----------
 function tbdBox() {
   const box = el("div", "tbd");
-  const link = el("a", "", SITE.instagram);
-  link.href = SITE.instagramUrl;
-  link.target = "_blank";
-  link.rel = "noopener";
-  const p = el("p");
-  p.append("Follow ", link, " on Instagram for the next pop-up.");
-  box.append(el("h3", "", "Menu TBD"), p);
+  box.append(el("h3", "", "Menu TBD"), el("p", "", CHECK_BACK_TEXT));
   return box;
 }
 if (TBD) {
