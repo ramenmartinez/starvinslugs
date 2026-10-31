@@ -167,7 +167,7 @@ document.querySelectorAll("[data-tel]").forEach(function (a) { a.href = "tel:" +
 // ---------- No pop-up today: swap in the TBD versions ----------
 function tbdBox() {
   const box = el("div", "tbd");
-  box.append(el("h3", "", "Menu TBD"), el("p", "", CHECK_BACK_TEXT));
+  box.append(el("h3", "", "Menu Coming Soon"), el("p", "", CHECK_BACK_TEXT));
   return box;
 }
 if (TBD) {
@@ -187,7 +187,7 @@ if (TBD) {
   const homeTitle = document.getElementById("home-menu-title");
   if (homeTitle) {
     homeTitle.textContent = "Last fundraiser's menu";
-    const line = el("p", "muted", "Next menu TBD. Here's what we served at our last pop-up.");
+    const line = el("p", "muted", "Next menu coming soon. Here's what we served at our last pop-up.");
     line.style.marginBottom = "24px";
     document.getElementById("home-menu").before(line);
     homeTitle.parentElement.style.marginBottom = "6px";
