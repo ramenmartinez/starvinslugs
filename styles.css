@@ -246,3 +246,7 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 /* About pop-up collage: nudge photos up so faces aren't cut off */
 .collage .photo img { object-position: 50% 25%; }
 .card .body > span:last-child { white-space: nowrap; }
+.tbd { border: 1.5px dashed var(--line); border-radius: 16px; background: var(--sand); padding: 48px 24px; text-align: center; }
+.tbd h3 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.tbd a { color: var(--red-dark); font-weight: 600; }
+.last-title { margin-top: 40px; }

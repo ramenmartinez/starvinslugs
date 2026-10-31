@@ -3,6 +3,16 @@
 //  You shouldn't need to edit this file.
 // ============================================================
 
+// Days with no pop-up: data.js sets MENU_TBD = true
+const TBD = typeof MENU_TBD !== "undefined" && MENU_TBD;
+const FOLLOW_TEXT = "Follow " + SITE.instagram + " on Instagram for the next pop-up.";
+if (TBD) {
+  NEXT_POPUP.location = "Location TBD";
+  NEXT_POPUP.time = "Time TBD";
+  NEXT_POPUP.howToSpot = FOLLOW_TEXT;
+}
+const SPOT_LINE = TBD ? "Next pop-up: location and time TBD" : SITE.usualSpot + " · " + SITE.usualHours;
+
 function el(tag, className, text) {
   const n = document.createElement(tag);
   if (className) n.className = className;
@@ -100,7 +110,7 @@ function fill(id, build) {
   ig.rel = "noopener";
   const mail = el("a", "", SITE.email);
   mail.href = "mailto:" + SITE.email;
-  foot.append(el("span", "", SITE.usualSpot + " · " + SITE.usualHours), ig, mail);
+  foot.append(el("span", "", SPOT_LINE), ig, mail);
   drawer.append(top, links, foot);
   document.body.append(backdrop, drawer);
 
@@ -127,7 +137,7 @@ function fill(id, build) {
 (function () {
   const footer = el("footer", "site-footer");
   const wrap = el("div", "wrap");
-  wrap.append(el("b", "", "StarvinSlugs"), el("span", "", SITE.usualSpot + " · " + SITE.usualHours));
+  wrap.append(el("b", "", "StarvinSlugs"), el("span", "", SPOT_LINE));
   const contact = el("span");
   const mail = el("a", "", SITE.email);
   mail.href = "mailto:" + SITE.email;
@@ -154,6 +164,42 @@ document.querySelectorAll("[data-fill]").forEach(function (n) {
 document.querySelectorAll("[data-email]").forEach(function (a) { a.href = "mailto:" + SITE.email; });
 document.querySelectorAll("[data-tel]").forEach(function (a) { a.href = "tel:" + SITE.phoneLink; });
 
+// ---------- No pop-up today: swap in the TBD versions ----------
+function tbdBox() {
+  const box = el("div", "tbd");
+  const link = el("a", "", SITE.instagram);
+  link.href = SITE.instagramUrl;
+  link.target = "_blank";
+  link.rel = "noopener";
+  const p = el("p");
+  p.append("Follow ", link, " on Instagram for the next pop-up.");
+  box.append(el("h3", "", "Menu TBD"), p);
+  return box;
+}
+if (TBD) {
+  document.querySelectorAll(".band [data-photo=\"map\"]").forEach(function (n) { n.remove(); });
+  document.querySelectorAll(".band p").forEach(function (n, i) { if (i > 0) n.remove(); });
+  const cols = document.querySelector(".menu-cols");
+  if (cols) {
+    const sec = el("section", "wrap");
+    sec.style.paddingBottom = "40px";
+    sec.append(tbdBox(), el("h2", "h2 last-title", "Last fundraiser's menu"), el("p", "muted", "This is what we served last time, so you can get an idea. The next menu may change."));
+    cols.before(sec);
+  }
+  const note = document.querySelector(".menu-head p.muted");
+  if (note) note.textContent = "Menu changes each pop-up";
+  const head = document.querySelector(".menu-head h1");
+  if (head) head.textContent = "Next menu";
+  const homeTitle = document.getElementById("home-menu-title");
+  if (homeTitle) {
+    homeTitle.textContent = "Last fundraiser's menu";
+    const line = el("p", "muted", "Next menu TBD. This is what we served last time, so you can get an idea.");
+    line.style.marginBottom = "24px";
+    document.getElementById("home-menu").before(line);
+    homeTitle.parentElement.style.marginBottom = "6px";
+  }
+}
+
 // ---------- Big photos ----------
 // Map spots get a real Google Map
 document.querySelectorAll('[data-photo="map"]').forEach(function (slot) {
@@ -177,10 +223,11 @@ document.querySelectorAll("[data-photo]").forEach(function (slot) {
 // ---------- Home: first 4 menu items ----------
 fill("home-menu", function (box) {
   FOOD.concat(DRINKS).slice(0, 4).forEach(function (item) {
-    const t = el("div", "tile" + (item.soldOut ? " sold" : ""));
+    const sold = item.soldOut && !TBD;
+    const t = el("div", "tile" + (sold ? " sold" : ""));
     t.appendChild(photo(item.photo, item.name));
     const cap = el("div", "cap");
-    cap.append(el("span", "name", item.name), el("span", "", item.soldOut ? "Sold out" : price(item.price)));
+    cap.append(el("span", "name", item.name), el("span", "", sold ? "Sold out" : price(item.price)));
     t.appendChild(cap);
     box.appendChild(t);
   });
@@ -207,12 +254,13 @@ fill("about-popups", function (box) {
 // ---------- Menu page ----------
 function menuCards(list, box) {
   list.forEach(function (item) {
-    const c = el("article", "card" + (item.soldOut ? " sold" : ""));
+    const sold = item.soldOut && !TBD;
+    const c = el("article", "card" + (sold ? " sold" : ""));
     c.appendChild(photo(item.photo, item.name));
     const body = el("div", "body");
     const left = el("span");
     left.appendChild(el("span", "name", item.name));
-    if (item.soldOut) left.appendChild(el("span", "badge", "Sold out"));
+    if (sold) left.appendChild(el("span", "badge", "Sold out"));
     if (item.note) left.appendChild(el("span", "note", item.note));
     body.append(left, el("span", "", price(item.price)));
     c.appendChild(body);
