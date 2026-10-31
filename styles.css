@@ -131,6 +131,10 @@ p { margin: 0; }
 .collage .big { grid-row: 1 / 3; }
 .collage.two { grid-template-columns: 1fr 1fr; grid-template-rows: 320px; }
 .collage.two .big { grid-row: auto; }
+.collage.four { grid-template-columns: 1fr 1fr; grid-template-rows: 380px 380px; }
+.collage.five { grid-template-columns: repeat(6, 1fr); grid-template-rows: 340px 240px; }
+.collage.five > * { grid-column: span 2; }
+.collage.five > :nth-child(-n+2) { grid-column: span 3; }
 
 /* ---------- Menu ---------- */
 .menu-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -222,6 +226,10 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
   .collage .big { grid-row: auto; grid-column: 1 / -1; }
   .collage.two { grid-template-rows: 180px; }
   .collage.two .big { grid-column: auto; }
+  .collage.four { grid-template-rows: 150px 150px; }
+  .collage.five { grid-template-columns: 1fr 1fr; grid-template-rows: 200px 130px 130px; }
+  .collage.five > *, .collage.five > :nth-child(-n+2) { grid-column: auto; }
+  .collage.five > :first-child { grid-column: 1 / -1; }
   .menu-head h1 { font-size: 32px; }
   .cards3, .menu-cols { grid-template-columns: 1fr; }
   .stack .card .photo { height: auto; }

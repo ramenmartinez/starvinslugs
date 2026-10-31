@@ -229,19 +229,27 @@ fill("home-menu", function (box) {
 
 // ---------- Home: recent pop-ups ----------
 fill("home-popups", function (box) {
-  box.style.gridTemplateColumns = "repeat(" + Math.min(POPUPS.length, 3) + ", minmax(0, 1fr))";
-  POPUPS.slice(0, 3).forEach(function (p) {
+  const shown = POPUPS.filter(function (p) { return !p.aboutOnly; }).slice(0, 3);
+  box.style.gridTemplateColumns = "repeat(" + shown.length + ", minmax(0, 1fr))";
+  shown.forEach(function (p) {
     const d = el("div");
-    d.append(photo(p.photo, p.name), el("div", "popup-cap", p.name));
+    const pic = photo(p.photo, p.name);
+    if (p.focus) pic.querySelector("img").style.objectPosition = p.focus;
+    d.append(pic, el("div", "popup-cap", p.name));
     box.appendChild(d);
   });
 });
 
 // ---------- About: pop-up collage ----------
 fill("about-popups", function (box) {
-  if (POPUPS.length === 2) box.classList.add("two");
-  POPUPS.slice(0, 3).forEach(function (p, i) {
-    box.appendChild(photo(p.photo, p.name, i === 0 ? "big" : ""));
+  const shown = POPUPS.slice(0, 5);
+  if (shown.length === 2) box.classList.add("two");
+  if (shown.length === 4) box.classList.add("four");
+  if (shown.length === 5) box.classList.add("five");
+  shown.forEach(function (p, i) {
+    const pic = photo(p.photo, p.name, i === 0 && shown.length < 4 ? "big" : "");
+    if (p.focus) pic.querySelector("img").style.objectPosition = p.focus;
+    box.appendChild(pic);
   });
 });
 
