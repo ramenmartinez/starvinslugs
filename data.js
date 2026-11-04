@@ -25,7 +25,7 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = false;
+const MENU_TBD = true;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
