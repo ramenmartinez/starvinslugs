@@ -25,7 +25,7 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = true;
+const MENU_TBD = false;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
@@ -57,7 +57,7 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "November 3";
+const MENU_UPDATED = "November 4";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
