@@ -30,7 +30,7 @@ const MENU_TBD = false;
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
-  location: "Science & Engineering Library",
+  location: "Science & Engineering Library, (moved to Stevenson Event Center!)",
   time: "1:15pm until we sell out",
   howToSpot: "Look for our table out front.",
 };
