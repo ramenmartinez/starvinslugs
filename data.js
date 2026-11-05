@@ -61,16 +61,16 @@ const MENU_UPDATED = "November 4";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: true },
-  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: true },
-  { name: "Lychee on Lychee", price: 8, photo: "lychee-tea.jpg", soldOut: true },
-  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: true },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: false },
+  { name: "Silky Strawberry", price: 8, photo: "", soldOut: false },
+  { name: "Lychee on Lychee", price: 8, photo: "lychee-tea.jpg", soldOut: false },
+  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
