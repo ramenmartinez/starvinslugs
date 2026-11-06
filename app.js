@@ -378,19 +378,21 @@ fill("faq", function (box) {
   });
 });
 
-// ---------- Sending forms to our email (FormSubmit) ----------
+// ---------- Sending forms to our email (Web3Forms) ----------
 // Gives up after 15 seconds and offers a regular email link instead.
+const WEB3FORMS_KEY = "6c193df8-9e56-4b04-adf9-dd5e6aa20924";
 function sendForm(payload) {
   const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
   const timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
-  return fetch("https://formsubmit.co/ajax/" + SITE.email, {
+  const data = { access_key: WEB3FORMS_KEY, from_name: "StarvinSlugs Website", subject: payload._subject };
+  Object.keys(payload).forEach(function (k) { if (k !== "_subject") data[k] = payload[k]; });
+  return fetch("https://api.web3forms.com/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify(Object.assign({ _template: "table", _captcha: "false" }, payload)),
+    body: JSON.stringify(data),
     signal: ctrl ? ctrl.signal : undefined,
   })
-    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-    .then(function (j) { if (j && (j.success === false || j.success === "false")) throw new Error("not sent"); return j; })
+    .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.success) throw new Error(j.message || r.status); return j; }); })
     .finally(function () { clearTimeout(timer); });
 }
 function emailFallback(msg, lead, subject, body) {
