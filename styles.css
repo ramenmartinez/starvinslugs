@@ -258,3 +258,24 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 .tbd h3 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
 .tbd a { color: var(--red-dark); font-weight: 600; }
 .last-title { margin-top: 40px; }
+
+/* ---------- Add to calendar (Home band) ---------- */
+.cal-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
+.cal-btn { display: inline-flex; align-items: center; height: 38px; padding: 0 18px; border-radius: 999px; background: var(--yellow); color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none; }
+.cal-btn:hover { background: #ffdf6b; }
+.cal-link { color: #e9cdf4; font-size: 14px; font-weight: 600; }
+
+/* ---------- Email sign-up (Home) ---------- */
+.signup-card { background: var(--sand); border-radius: 18px; padding: 36px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: center; scroll-margin-top: 90px; }
+.signup-card p.muted { margin-top: 8px; font-size: 17px; }
+.signup-card form { gap: 8px; }
+.signup-row { display: flex; gap: 10px; }
+.signup-row input { flex: 1; min-width: 0; height: 48px; border: 1.5px solid #d5c3e3; border-radius: 999px; padding: 0 18px; font: inherit; background: var(--white); color: var(--ink); }
+.signup-row .btn { flex: none; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 720px) {
+  .signup-card { grid-template-columns: 1fr; padding: 24px 20px; gap: 18px; }
+  .signup-row { flex-direction: column; }
+  .signup-row input { flex: none; width: 100%; }
+  .signup-row .btn { width: 100%; }
+}

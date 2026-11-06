@@ -30,6 +30,9 @@ const MENU_TBD = false;
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
+  // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
+  date: "2026-11-05",
+  start: "13:15",   // start time, 24-hour (13:15 = 1:15pm)
   location: "Science & Engineering Library",
   time: "1:15pm until we sell out",
   howToSpot: "Look for our table out front.",

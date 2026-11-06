@@ -51,6 +51,24 @@
     <div class="row-head"><h2 class="h2">Recent pop-ups</h2><a class="link" href="about.html">See all on About →</a></div>
     <div class="popups3" id="home-popups"></div>
   </section>
+
+  <section class="wrap section" id="signup" style="padding-top:0">
+    <div class="signup-card">
+      <div>
+        <h2 class="h2">Never miss a pop-up</h2>
+        <p class="muted">Get one email before each pop-up with the date, spot, and menu. Nothing else.</p>
+      </div>
+      <form id="signup-form" novalidate>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="signup-row">
+          <label class="sr-only" for="signup-email">Email</label>
+          <input id="signup-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" required>
+          <button class="btn" type="submit">Notify me</button>
+        </div>
+        <p class="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
 </main>
 <script src="data.js"></script>
 <script src="app.js"></script>
