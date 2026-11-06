@@ -6,12 +6,15 @@
 // Days with no pop-up: data.js sets MENU_TBD = true
 const TBD = typeof MENU_TBD !== "undefined" && MENU_TBD;
 const CHECK_BACK_TEXT = "Check back here for our next pop-up.";
-if (TBD) {
-  NEXT_POPUP.location = "Location TBD";
+// Everything marked soldOut: also show the time as TBD
+const SOLD_OUT_DAY = !TBD && FOOD.concat(DRINKS).length > 0 &&
+  FOOD.concat(DRINKS).every(function (i) { return i.soldOut; });
+const NOT_SELLING = TBD || SOLD_OUT_DAY;
+if (NOT_SELLING) {
   NEXT_POPUP.time = "Time TBD";
-  NEXT_POPUP.howToSpot = CHECK_BACK_TEXT;
+  NEXT_POPUP.howToSpot = SOLD_OUT_DAY ? "We're sold out for today. Thanks for coming! " + CHECK_BACK_TEXT : CHECK_BACK_TEXT;
 }
-const SPOT_LINE = TBD ? "Next pop-up: location and time TBD" : SITE.usualSpot + " · " + SITE.usualHours;
+const SPOT_LINE = NOT_SELLING ? "Next pop-up: " + SITE.usualSpot + " · time TBD" : SITE.usualSpot + " · " + SITE.usualHours;
 
 function el(tag, className, text) {
   const n = document.createElement(tag);
@@ -185,9 +188,10 @@ function tbdBox() {
   box.append(el("h3", "", "Menu Coming Soon"), el("p", "", CHECK_BACK_TEXT));
   return box;
 }
-if (TBD) {
-  document.querySelectorAll(".band [data-photo=\"map\"]").forEach(function (n) { n.remove(); });
+if (NOT_SELLING) {
   document.querySelectorAll(".band p").forEach(function (n, i) { if (i > 0) n.remove(); });
+}
+if (TBD) {
   const cols = document.querySelector(".menu-cols");
   if (cols) {
     const sec = el("section", "wrap");
@@ -374,6 +378,29 @@ fill("faq", function (box) {
   });
 });
 
+// ---------- Sending forms to our email (FormSubmit) ----------
+// Gives up after 15 seconds and offers a regular email link instead.
+function sendForm(payload) {
+  const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+  const timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 15000);
+  return fetch("https://formsubmit.co/ajax/" + SITE.email, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify(Object.assign({ _template: "table", _captcha: "false" }, payload)),
+    signal: ctrl ? ctrl.signal : undefined,
+  })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (j) { if (j && (j.success === false || j.success === "false")) throw new Error("not sent"); return j; })
+    .finally(function () { clearTimeout(timer); });
+}
+function emailFallback(msg, lead, subject, body) {
+  msg.textContent = lead + " ";
+  const a = el("a", "", "Email us instead");
+  a.href = "mailto:" + SITE.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+  msg.appendChild(a);
+  msg.appendChild(document.createTextNode("."));
+}
+
 // ---------- Home: email heads-up sign-up ----------
 fill("signup-form", function (form) {
   const msg = form.querySelector(".form-msg");
@@ -389,23 +416,14 @@ fill("signup-form", function (form) {
     const button = form.querySelector("button");
     button.disabled = true;
     msg.textContent = "Signing you up...";
-    fetch("https://formsubmit.co/ajax/" + SITE.email, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        _subject: "Pop-up email list: " + email,
-        _template: "table",
-        _captcha: "false",
-        "Add to pop-up email list": email,
-      }),
-    })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    sendForm({ _subject: "Pop-up email list: " + email, "Add to pop-up email list": email })
       .then(function () {
         form.reset();
         msg.textContent = "You're on the list! We'll email you before our next pop-up.";
       })
       .catch(function () {
-        msg.textContent = "That didn't go through. Try again, or email us at " + SITE.email + ".";
+        emailFallback(msg, "Sign-up isn't working right now.", "Add me to the pop-up email list",
+          "Please add " + email + " to the StarvinSlugs pop-up email list.");
       })
       .finally(function () { button.disabled = false; });
   });
@@ -433,25 +451,19 @@ fill("request-form", function (form) {
     const button = form.querySelector("button");
     button.disabled = true;
     msg.textContent = "Sending...";
-    fetch("https://formsubmit.co/ajax/" + SITE.email, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify({
-        _subject: "Menu request: " + what,
-        _template: "table",
-        _captcha: "false",
-        Type: kind,
-        "What they'd like to see": what,
-        "Allergies / food restrictions": allergies || "None",
-      }),
+    sendForm({
+      _subject: "Menu request: " + what,
+      Type: kind,
+      "What they'd like to see": what,
+      "Allergies / food restrictions": allergies || "None",
     })
-      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
       .then(function () {
         form.reset();
         msg.textContent = "Thanks! Your request was sent.";
       })
       .catch(function () {
-        msg.textContent = "That didn't go through. Try again, or email us at " + SITE.email + ".";
+        emailFallback(msg, "The form isn't working right now.", "Menu request: " + what,
+          "Type: " + kind + "\nWhat I'd like to see: " + what + "\nAllergies / food restrictions: " + (allergies || "None"));
       })
       .finally(function () { button.disabled = false; });
   });
