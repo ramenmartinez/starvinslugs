@@ -67,10 +67,10 @@ const FOOD = [
 ];
 
 const DRINKS = [
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: true },
-  { name: "Silky Strawberry", price: 8, photo: "silky-strawberry-tea-2.jpg", soldOut: true },
-  { name: "Lychee on Lychee", price: 8, photo: "lychee-tea.jpg", soldOut: true },
-  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: true },
+  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasmine-milk-tea.jpg", soldOut: true },
+  { name: "Silky Strawberry", price: 7, photo: "silky-strawberry-tea-2.jpg", soldOut: true },
+  { name: "Lychee on Lychee", price: 7, photo: "lychee-tea.jpg", soldOut: true },
+  { name: "Classic Thai Tea", price: 7, photo: "thai-tea.jpg", soldOut: true },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
