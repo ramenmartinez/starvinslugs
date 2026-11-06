@@ -25,14 +25,15 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = false;
+const MENU_TBD = true;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "2026-11-05",
+  date: "",
   start: "13:15",   // start time, 24-hour (13:15 = 1:15pm)
+  tbdTime: "Next week · day and time TBD",   // shown instead of the time when not selling (leave "" for "Time TBD")
   location: "Science & Engineering Library",
   time: "1:15pm until we sell out",
   howToSpot: "Look for our table out front.",

@@ -11,10 +11,10 @@ const SOLD_OUT_DAY = !TBD && FOOD.concat(DRINKS).length > 0 &&
   FOOD.concat(DRINKS).every(function (i) { return i.soldOut; });
 const NOT_SELLING = TBD || SOLD_OUT_DAY;
 if (NOT_SELLING) {
-  NEXT_POPUP.time = "Time TBD";
+  NEXT_POPUP.time = NEXT_POPUP.tbdTime || "Time TBD";
   NEXT_POPUP.howToSpot = SOLD_OUT_DAY ? "We're sold out for today. Thanks for coming! " + CHECK_BACK_TEXT : CHECK_BACK_TEXT;
 }
-const SPOT_LINE = NOT_SELLING ? "Next pop-up: " + SITE.usualSpot + " · time TBD" : SITE.usualSpot + " · " + SITE.usualHours;
+const SPOT_LINE = NOT_SELLING ? "Next pop-up: " + SITE.usualSpot + " · " + (NEXT_POPUP.tbdTime || "time TBD") : SITE.usualSpot + " · " + SITE.usualHours;
 
 function el(tag, className, text) {
   const n = document.createElement(tag);
