@@ -263,7 +263,6 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
 .cal-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 14px; }
 .cal-btn { display: inline-flex; align-items: center; height: 38px; padding: 0 18px; border-radius: 999px; background: var(--yellow); color: var(--ink); font-size: 15px; font-weight: 700; text-decoration: none; }
 .cal-btn:hover { background: #ffdf6b; }
-.cal-link { color: #e9cdf4; font-size: 14px; font-weight: 600; }
 
 /* ---------- Email sign-up (Home) ---------- */
 .signup-card { background: var(--sand); border-radius: 18px; padding: 36px 40px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: center; scroll-margin-top: 90px; }

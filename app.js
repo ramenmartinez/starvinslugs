@@ -254,13 +254,7 @@ if (TBD) {
     a.remove();
     setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
   });
-  const g = el("a", "cal-link", "Google Calendar");
-  g.href = "https://calendar.google.com/calendar/render?action=TEMPLATE&text=" + encodeURIComponent(title) +
-    "&dates=" + start + "/" + end + "&ctz=America/Los_Angeles&location=" + encodeURIComponent(where) +
-    "&details=" + encodeURIComponent(about);
-  g.target = "_blank";
-  g.rel = "noopener";
-  row.append(ics, g);
+  row.append(ics);
   spot.after(row);
 })();
 
