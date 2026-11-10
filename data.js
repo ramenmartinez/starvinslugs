@@ -73,7 +73,7 @@ const DRINKS = [
   { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: false },
   { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: false },
   { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: false },
-  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "brown-sugar-tea.jpg", soldOut: false },
+  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "brown-sugar-tea-2.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:

@@ -136,21 +136,6 @@ function fill(id, build) {
   });
 })();
 
-// ---------- Pop-up status (used for the calendar button) ----------
-function todayISO() {
-  const d = new Date();
-  return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
-}
-const POPUP_DATE = NEXT_POPUP.date || "";
-const ALL_SOLD = FOOD.concat(DRINKS).length > 0 && FOOD.concat(DRINKS).every(function (i) { return i.soldOut; });
-const STATUS = (function () {
-  if (TBD) return "tbd";
-  if (POPUP_DATE && POPUP_DATE < todayISO()) return "tbd"; // pop-up already happened
-  if (ALL_SOLD) return "soldout";
-  if (POPUP_DATE && POPUP_DATE > todayISO()) return "upcoming";
-  return "today";
-})();
-
 // ---------- Footer ----------
 (function () {
   const footer = el("footer", "site-footer");
@@ -212,51 +197,6 @@ if (TBD) {
     homeTitle.parentElement.style.marginBottom = "6px";
   }
 }
-
-// ---------- Home band: "Add to calendar" ----------
-(function () {
-  if (STATUS !== "today" && STATUS !== "upcoming") return;
-  if (!POPUP_DATE) return;
-  const spot = document.querySelector(".band [data-fill=\"NEXT_POPUP.time\"]");
-  if (!spot) return;
-  const d = POPUP_DATE.replace(/-/g, "");
-  const t = (NEXT_POPUP.start || "13:15").split(":");
-  const startMin = (+t[0]) * 60 + (+t[1]);
-  const endMin = startMin + 120;
-  function hhmm(m) { return String(Math.floor(m / 60)).padStart(2, "0") + String(m % 60).padStart(2, "0") + "00"; }
-  const start = d + "T" + hhmm(startMin);
-  const end = d + "T" + hhmm(endMin);
-  const title = "StarvinSlugs pop-up";
-  const where = NEXT_POPUP.location;
-  const about = NEXT_POPUP.time + ". Menu: https://www.starvinslugs.com/menu.html";
-
-  const row = el("div", "cal-row");
-  const ics = el("a", "cal-btn", "Add to calendar");
-  ics.href = "#";
-  ics.addEventListener("click", function (e) {
-    e.preventDefault();
-    const esc = function (s) { return s.replace(/[\\,;]/g, function (c) { return "\\" + c; }); };
-    const file = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//StarvinSlugs//Pop-up//EN", "BEGIN:VEVENT",
-      "UID:popup-" + d + "@starvinslugs.com",
-      "DTSTAMP:" + new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z",
-      "DTSTART;TZID=America/Los_Angeles:" + start,
-      "DTEND;TZID=America/Los_Angeles:" + end,
-      "SUMMARY:" + esc(title), "LOCATION:" + esc(where), "DESCRIPTION:" + esc(about),
-      "END:VEVENT", "END:VCALENDAR",
-    ].join("\r\n");
-    const url = URL.createObjectURL(new Blob([file], { type: "text/calendar" }));
-    const a = el("a");
-    a.href = url;
-    a.download = "starvinslugs-popup.ics";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
-  });
-  row.append(ics);
-  spot.after(row);
-})();
 
 // ---------- Big photos ----------
 // Map spots get a real Google Map
