@@ -17,7 +17,7 @@ const SITE = {
   instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
   usualSpot: "Outside the Science & Engineering Library",
-  usualHours: "1:15pm until we sell out",
+  usualHours: "12pm until we sell out",
   payment: "Zelle, Venmo, or cash",
 };
 
@@ -25,17 +25,16 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = true;
+const MENU_TBD = false;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "",
-  start: "13:15",   // start time, 24-hour (13:15 = 1:15pm)
-  tbdTime: "Next week · day and time TBD",   // shown instead of the time when not selling (leave "" for "Time TBD")
+  date: "2026-11-10",
+  start: "12:00",   // start time, 24-hour (13:15 = 1:15pm)
   location: "Science & Engineering Library",
-  time: "1:15pm until we sell out",
+  time: "Tuesday, Nov 10 · 12pm until we sell out",
   howToSpot: "Look for our table out front.",
 };
 
@@ -61,20 +60,20 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "November 4";
+const MENU_UPDATED = "November 9";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasmine-milk-tea.jpg", soldOut: true },
-  { name: "Silky Strawberry", price: 7, photo: "silky-strawberry-tea-2.jpg", soldOut: true },
-  { name: "Lychee on Lychee", price: 7, photo: "lychee-tea.jpg", soldOut: true },
-  { name: "Classic Thai Tea", price: 7, photo: "thai-tea.jpg", soldOut: true },
+  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: false },
+  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: false },
+  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
@@ -85,12 +84,13 @@ const DEALS = [];
 // ---------- Past pop-ups (newest first) ----------
 // Home shows the first 3 (skipping aboutOnly ones). About shows up to 5 in a bigger collage.
 // focus: optional, which part of the photo to keep when it gets cropped.
+// date: shown under the photo, e.g. "Oct 28". caption: one short sentence. Leave "" to hide either one.
 const POPUPS = [
-  { name: "Bánh Mì & Boba Pop-Up", photo: "popup-banh-mi-boba.jpg" },
-  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg" },
-  { name: "Boba Pop-Up", photo: "popup-request-form.jpg", focus: "50% 15%", aboutOnly: true },
-  { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg" },
-  { name: "Costco Pizza Pop-Up", photo: "team-group.jpg" },
+  { name: "Bánh Mì & Boba Pop-Up", photo: "popup-banh-mi-boba.jpg", date: "", caption: "A full table of bánh mì and boba, ready for the lunch rush." },
+  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg", date: "", caption: "Serving bánh mì and Teaspoon boba between classes." },
+  { name: "Boba Pop-Up", photo: "popup-request-form.jpg", focus: "50% 15%", aboutOnly: true, date: "", caption: "Teaspoon boba, plus a QR code to request what we bring next." },
+  { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg", date: "", caption: "Our handwritten menu of pork, chicken, and veggie bánh mì." },
+  { name: "Costco Pizza Pop-Up", photo: "team-group.jpg", date: "", caption: "Costco pizza and cold drinks for the whole crowd." },
 ];
 
 
@@ -131,5 +131,3 @@ const FAQ = [
 // The very first request sends an "Activate Form" email to that inbox:
 // click the button in it once, and every request after that arrives normally.
 const REQUEST_FORM_URL = "";
-
-

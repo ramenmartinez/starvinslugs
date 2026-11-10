@@ -297,28 +297,111 @@ fill("home-menu", function (box) {
   });
 });
 
+// ---------- Pop-up photos: caption, date, and a bigger view on click ----------
+function popupMeta(p) {
+  const meta = el("div", "popup-meta");
+  meta.appendChild(el("div", "popup-cap", p.name));
+  if (p.date) meta.appendChild(el("div", "popup-date", p.date));
+  if (p.caption) meta.appendChild(el("p", "popup-text", p.caption));
+  return meta;
+}
+const lightbox = (function () {
+  let list = [], index = 0, lastFocus = null;
+  const box = el("div", "lightbox");
+  box.setAttribute("role", "dialog");
+  box.setAttribute("aria-modal", "true");
+  box.setAttribute("aria-label", "Pop-up photo");
+  box.hidden = true;
+  const inner = el("div", "lightbox-inner");
+  const close = el("button", "lightbox-close", "×");
+  close.type = "button";
+  close.setAttribute("aria-label", "Close");
+  const prev = el("button", "lightbox-nav prev", "‹");
+  prev.type = "button";
+  prev.setAttribute("aria-label", "Previous photo");
+  const next = el("button", "lightbox-nav next", "›");
+  next.type = "button";
+  next.setAttribute("aria-label", "Next photo");
+  const img = el("img");
+  const info = el("div", "lightbox-info");
+  inner.append(close, img, info);
+  box.append(prev, inner, next);
+  document.body.appendChild(box);
+
+  function show(i) {
+    index = (i + list.length) % list.length;
+    const p = list[index];
+    img.src = p.photo;
+    img.alt = p.name;
+    info.replaceChildren(popupMeta(p));
+    const many = list.length > 1;
+    prev.hidden = !many;
+    next.hidden = !many;
+  }
+  function open(items, i) {
+    list = items;
+    lastFocus = document.activeElement;
+    show(i);
+    box.hidden = false;
+    document.body.style.overflow = "hidden";
+    close.focus();
+  }
+  function shut() {
+    box.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus) lastFocus.focus();
+  }
+  close.addEventListener("click", shut);
+  prev.addEventListener("click", function () { show(index - 1); });
+  next.addEventListener("click", function () { show(index + 1); });
+  box.addEventListener("click", function (e) { if (e.target === box) shut(); });
+  document.addEventListener("keydown", function (e) {
+    if (box.hidden) return;
+    if (e.key === "Escape") shut();
+    if (e.key === "ArrowLeft" && list.length > 1) show(index - 1);
+    if (e.key === "ArrowRight" && list.length > 1) show(index + 1);
+  });
+  return { open: open };
+})();
+function clickable(node, items, i, p) {
+  node.classList.add("zoomable");
+  node.tabIndex = 0;
+  node.setAttribute("role", "button");
+  node.setAttribute("aria-label", "View photo: " + p.name);
+  node.addEventListener("click", function () { lightbox.open(items, i); });
+  node.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); lightbox.open(items, i); }
+  });
+}
+
 // ---------- Home: recent pop-ups ----------
 fill("home-popups", function (box) {
-  const shown = POPUPS.filter(function (p) { return !p.aboutOnly; }).slice(0, 3);
+  const shown = POPUPS.filter(function (p) { return !p.aboutOnly && p.photo; }).slice(0, 3);
   box.style.gridTemplateColumns = "repeat(" + shown.length + ", minmax(0, 1fr))";
-  shown.forEach(function (p) {
+  shown.forEach(function (p, i) {
     const d = el("div");
     const pic = photo(p.photo, p.name);
     if (p.focus) pic.querySelector("img").style.objectPosition = p.focus;
-    d.append(pic, el("div", "popup-cap", p.name));
+    clickable(pic, shown, i, p);
+    d.append(pic, popupMeta(p));
     box.appendChild(d);
   });
 });
 
 // ---------- About: pop-up collage ----------
 fill("about-popups", function (box) {
-  const shown = POPUPS.slice(0, 5);
+  const shown = POPUPS.filter(function (p) { return p.photo; }).slice(0, 5);
   if (shown.length === 2) box.classList.add("two");
   if (shown.length === 4) box.classList.add("four");
   if (shown.length === 5) box.classList.add("five");
   shown.forEach(function (p, i) {
     const pic = photo(p.photo, p.name, i === 0 && shown.length < 4 ? "big" : "");
     if (p.focus) pic.querySelector("img").style.objectPosition = p.focus;
+    const label = el("div", "collage-label");
+    label.appendChild(el("b", "", p.name));
+    if (p.date) label.appendChild(el("span", "", p.date));
+    pic.appendChild(label);
+    clickable(pic, shown, i, p);
     box.appendChild(pic);
   });
 });
@@ -421,7 +504,7 @@ fill("signup-form", function (form) {
     sendForm({ _subject: "Pop-up email list: " + email, "Add to pop-up email list": email })
       .then(function () {
         form.reset();
-        msg.textContent = "You're on the list! We'll email you before our next pop-up.";
+        msg.textContent = "You're on the list! To make sure our emails don't land in spam, add " + SITE.email + " to your contacts.";
       })
       .catch(function () {
         emailFallback(msg, "Sign-up isn't working right now.", "Add me to the pop-up email list",
