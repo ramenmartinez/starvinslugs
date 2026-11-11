@@ -60,20 +60,20 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "November 9";
+const MENU_UPDATED = "November 10";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: false },
-  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: false },
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: false },
-  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "brown-sugar-tea-2.jpg", soldOut: false },
+  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: true },
+  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: true },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: true },
+  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "brown-sugar-tea-2.jpg", soldOut: true },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
