@@ -17,7 +17,7 @@ const SITE = {
   instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
   usualSpot: "Outside the Science & Engineering Library",
-  usualHours: "12pm until we sell out",
+  usualHours: "12:30pm until we sell out",
   payment: "Zelle, Venmo, or cash",
 };
 
@@ -31,10 +31,10 @@ const MENU_TBD = false;
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "2026-11-10",
-  start: "12:00",   // start time, 24-hour (13:15 = 1:15pm)
+  date: "2026-11-12",
+  start: "12:30",   // start time, 24-hour (13:15 = 1:15pm)
   location: "Science & Engineering Library",
-  time: "Tuesday, Nov 10 · 12pm until we sell out",
+  time: "Thursday, Nov 12 · 12:30pm until we sell out",
   howToSpot: "Look for our table out front.",
 };
 
@@ -60,20 +60,19 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "November 10";
+const MENU_UPDATED = "November 11";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: true },
-  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: true },
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: true },
-  { name: "Black Sugar Assam", note: "Brown sugar milk tea", price: 8, photo: "brown-sugar-tea-2.jpg", soldOut: true },
+  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: false },
+  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
