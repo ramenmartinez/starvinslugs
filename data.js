@@ -49,8 +49,8 @@ const MAP = {
 
 // ---------- Big photos around the site ----------
 const PHOTOS = {
-  homeHero: "home-hero.jpg",   // team with bánh mì and boba
-  aboutWhy: "about-team-boba.jpg",   // team with boba and bánh mì
+  homeHero: "team-home-page.jpeg",   // team with bánh mì and boba
+  aboutWhy: "about-team-boba.jpeg",   // team with boba and bánh mì
   aboutWhat: "about-serving.jpg",   // serving students at the table
   teamGroup: "team-photo.jpg",   // whole team group photo
 };
@@ -70,9 +70,9 @@ const FOOD = [
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 8, photo: "thai-tea.jpg", soldOut: true },
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasmine-milk-tea.jpg", soldOut: true },
-  { name: "Silky Mango", price: 8, photo: "silky-mango-tea.jpg", soldOut: true },
+  { name: "Classic Thai Tea", price: 8, photo: "thaitea.jpeg", soldOut: true },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasminemilk.jpeg", soldOut: true },
+  { name: "Silky Mango", price: 8, photo: "silkymango.jpeg", soldOut: true },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
