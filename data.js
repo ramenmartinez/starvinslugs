@@ -25,13 +25,13 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = false;
+const MENU_TBD = true;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "2026-11-12",
+  date: "",
   start: "12:30",   // start time, 24-hour (13:15 = 1:15pm)
   location: "Science & Engineering Library",
   time: "Thursday, Nov 12 · 12:30pm until we sell out",
