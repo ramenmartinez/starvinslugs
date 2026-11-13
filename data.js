@@ -51,7 +51,7 @@ const MAP = {
 const PHOTOS = {
   homeHero: "team-home-page.jpeg",   // team with bánh mì and boba
   aboutWhy: "about-team-boba.jpeg",   // team with boba and bánh mì
-  aboutWhat: "about-serving.jpg",   // serving students at the table
+  aboutWhat: "serving.jpeg",   // serving students at the table
   teamGroup: "team-photo.jpg",   // whole team group photo
 };
 
