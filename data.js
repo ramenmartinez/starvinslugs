@@ -17,7 +17,7 @@ const SITE = {
   instagram: "@starvinslugs",
   instagramUrl: "https://www.instagram.com/starvinslugs/",
   usualSpot: "Outside the Science & Engineering Library",
-  usualHours: "12:30pm until we sell out",
+  usualHours: "around noon until we sell out",
   payment: "Zelle, Venmo, or cash",
 };
 
@@ -25,17 +25,17 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = true;
+const MENU_TBD = false;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "",
-  start: "12:30",   // start time, 24-hour (13:15 = 1:15pm)
-  location: "Science & Engineering Library",
-  time: "Thursday, Nov 12 · 12:30pm until we sell out",
-  howToSpot: "Look for our table out front.",
+  date: "2026-11-17",
+  start: "12:00",   // start time, 24-hour (13:15 = 1:15pm)
+  location: "Science & Engineering Library + McHenry Library",
+  time: "Tuesday, Nov 17 · around noon until we sell out",
+  howToSpot: "We'll have a table at both libraries this time. Look for our table out front.",
 };
 
 
@@ -60,19 +60,19 @@ const PHOTOS = {
 // The first 4 items (food first, then drinks) also show on the Home page.
 // soldOut: true shows the item faded and crossed out.
 // note: small gray line under the name, like where the item is from.
-const MENU_UPDATED = "November 12";
+const MENU_UPDATED = "November 16";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
   { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 8, photo: "thaitea.jpeg", soldOut: true },
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasminemilk.jpeg", soldOut: true },
-  { name: "Silky Mango", price: 8, photo: "silkymango.jpeg", soldOut: true },
+  { name: "Classic Thai Tea", price: 8, photo: "thaitea.jpeg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasminemilk.jpeg", soldOut: false },
+  { name: "Silky Mango", price: 8, photo: "silkymango.jpeg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
@@ -120,13 +120,11 @@ const MEMBERS = [
 // ---------- Common questions (Contact page) ----------
 const FAQ = [
   { q: "How do I pay?", a: "Zelle, Venmo, or cash." },
-  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, from 1:15pm until we sell out. The next pop-up is always on the Home page." },
+  { q: "Where and when are you usually set up?", a: "Usually outside the Science & Engineering Library, starting around noon until we sell out. The next pop-up is always on the Home page." },
   { q: "Can I pre-order?", a: "Yes! Text us at (831) 508-8689 or DM us on Instagram @starvinslugs." },
 ];
 
 
 // ---------- Request form ----------
-// Requests are sent straight to SITE.email through FormSubmit (formsubmit.co).
-// The very first request sends an "Activate Form" email to that inbox:
-// click the button in it once, and every request after that arrives normally.
+// Requests and email sign-ups are sent straight to SITE.email through Web3Forms (key is in app.js).
 const REQUEST_FORM_URL = "";
