@@ -304,3 +304,8 @@ legend { font-size: 14px; font-weight: 600; margin-bottom: 6px; padding: 0; }
   .lightbox-nav.next { right: 18px; }
 }
 @media (prefers-reduced-motion: reduce) { .zoomable:hover img { transform: none; } }
+
+/* Map: buttons to switch between locations */
+.map-tabs { position: absolute; left: 10px; top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+.map-tabs button { border: 0; border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 13px; font-weight: 600; background: var(--white); color: var(--ink); box-shadow: 0 1px 4px rgba(0,0,0,.2); cursor: pointer; }
+.map-tabs button[aria-pressed="true"] { background: var(--red); color: var(--white); }

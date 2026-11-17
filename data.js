@@ -44,6 +44,15 @@ const NEXT_POPUP = {
 const MAP = {
   embed: "https://www.google.com/maps?q=Science+and+Engineering+Library,+Santa+Cruz,+CA&z=17&output=embed",
   link: "https://www.google.com/maps/search/?api=1&query=Science+and+Engineering+Library+Santa+Cruz+CA",
+  // Two locations? List both and the map gets a button for each. Leave spots: [] for one location.
+  spots: [
+    { name: "Science & Engineering Library", short: "S&E Library",
+      embed: "https://www.google.com/maps?q=Science+and+Engineering+Library,+Santa+Cruz,+CA&z=17&output=embed",
+      link: "https://www.google.com/maps/search/?api=1&query=Science+and+Engineering+Library+Santa+Cruz+CA" },
+    { name: "McHenry Library", short: "McHenry Library",
+      embed: "https://www.google.com/maps?q=McHenry+Library,+Santa+Cruz,+CA&z=17&output=embed",
+      link: "https://www.google.com/maps/search/?api=1&query=McHenry+Library+Santa+Cruz+CA" },
+  ],
 };
 
 

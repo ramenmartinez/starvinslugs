@@ -211,6 +211,28 @@ document.querySelectorAll('[data-photo="map"]').forEach(function (slot) {
   link.target = "_blank";
   link.rel = "noopener";
   box.append(frame, link);
+  // More than one location: a button for each one switches the map
+  const spots = Array.isArray(MAP.spots) ? MAP.spots : [];
+  if (spots.length > 1) {
+    const tabs = el("div", "map-tabs");
+    tabs.setAttribute("role", "group");
+    tabs.setAttribute("aria-label", "Choose a location");
+    const buttons = spots.map(function (spot, i) {
+      const b = el("button", "", spot.short || spot.name);
+      b.type = "button";
+      b.addEventListener("click", function () { show(i); });
+      tabs.appendChild(b);
+      return b;
+    });
+    function show(i) {
+      frame.src = spots[i].embed;
+      frame.title = "Map: " + spots[i].name;
+      link.href = spots[i].link;
+      buttons.forEach(function (b, j) { b.setAttribute("aria-pressed", String(i === j)); });
+    }
+    box.appendChild(tabs);
+    show(0);
+  }
   slot.replaceWith(box);
 });
 
