@@ -32,9 +32,9 @@ const MENU_TBD = false;
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
   date: "2026-11-17",
-  start: "12:00",   // start time, 24-hour (13:15 = 1:15pm)
+  start: "12:30",   // start time, 24-hour (13:15 = 1:15pm)
   location: "Science & Engineering Library + McHenry Library",
-  time: "Tuesday, Nov 17 · around noon until we sell out",
+  time: "Tuesday, Nov 17 · 12:30pm until we sell out",
   howToSpot: "We'll have a table at both libraries this time. Look for our table out front.",
 };
 
@@ -70,9 +70,9 @@ const FOOD = [
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 8, photo: "thaitea.jpeg", soldOut: false },
-  { name: "Creamy Jasmine Milk Tea", price: 8, photo: "jasminemilk.jpeg", soldOut: false },
-  { name: "Silky Mango", price: 8, photo: "silkymango.jpeg", soldOut: false },
+  { name: "Classic Thai Tea", price: 7, photo: "thaitea.jpeg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasminemilk.jpeg", soldOut: false },
+  { name: "Silky Mango", price: 7, photo: "silkymango.jpeg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
