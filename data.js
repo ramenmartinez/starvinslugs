@@ -94,11 +94,11 @@ const DEALS = [];
 // focus: optional, which part of the photo to keep when it gets cropped.
 // date: shown under the photo, e.g. "Oct 28". caption: one short sentence. Leave "" to hide either one.
 const POPUPS = [
-  { name: "Bánh Mì & Boba Pop-Up", photo: "popup-banh-mi-boba.jpg", date: "", caption: "A full table of bánh mì and boba, ready for the lunch rush." },
-  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg", date: "", caption: "Serving bánh mì and Teaspoon boba between classes." },
-  { name: "Boba Pop-Up", photo: "popup-request-form.jpg", focus: "50% 15%", aboutOnly: true, date: "", caption: "Teaspoon boba, plus a QR code to request what we bring next." },
-  { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg", date: "", caption: "Our handwritten menu of pork, chicken, and veggie bánh mì." },
-  { name: "Costco Pizza Pop-Up", photo: "team-group.jpg", date: "", caption: "Costco pizza and cold drinks for the whole crowd." },
+  { name: "Bánh Mì & Boba Pop-Up", photo: "popup-banh-mi-boba.jpg", date: "Nov 4", caption: "A full table of bánh mì and boba, ready for the lunch rush." },
+  { name: "Boba Bánh Mì Pop-Up", photo: "popup-boba-banh-mi.jpg", date: "Oct 27", caption: "Serving bánh mì and Teaspoon boba between classes." },
+  { name: "Boba Pop-Up", photo: "popup-request-form.jpg", focus: "50% 15%", aboutOnly: true, date: "Oct 28", caption: "Teaspoon boba, plus a QR code to request what we bring next." },
+  { name: "Bánh Mì Pop-Up", photo: "banh-mi-popup.jpg", date: "Oct 20", caption: "Our handwritten menu of pork, chicken, and veggie bánh mì." },
+  { name: "Costco Pizza Pop-Up", photo: "team-group.jpg", date: "Oct 8", caption: "Costco pizza and cold drinks for the whole crowd." },
 ];
 
 
