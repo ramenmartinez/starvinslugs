@@ -73,15 +73,15 @@ const MENU_UPDATED = "November 16";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 7, photo: "thaitea.jpeg", soldOut: false },
-  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasminemilk.jpeg", soldOut: false },
-  { name: "Silky Mango", price: 7, photo: "silkymango.jpeg", soldOut: false },
+  { name: "Classic Thai Tea", price: 7, photo: "thaitea.jpeg", soldOut: true },
+  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasminemilk.jpeg", soldOut: true },
+  { name: "Silky Mango", price: 7, photo: "silkymango.jpeg", soldOut: true },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
