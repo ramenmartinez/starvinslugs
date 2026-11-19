@@ -25,17 +25,17 @@ const SITE = {
 // ---------- No pop-up today? ----------
 // true = menu, location and time all say TBD (weekends and days off).
 // false = normal menu, location and time.
-const MENU_TBD = false;
+const MENU_TBD = true;
 
 
 // ---------- Next pop-up (dark band on the Home page) ----------
 const NEXT_POPUP = {
   // date: the pop-up day as "YYYY-MM-DD", e.g. "2026-11-12". Turns on the "Add to calendar" button.
-  date: "2026-11-17",
+  date: "",
   start: "12:30",   // start time, 24-hour (13:15 = 1:15pm)
-  location: "Science & Engineering Library + McHenry Library",
+  location: "Science & Engineering Library",
   time: "Tuesday, Nov 17 · 12:30pm until we sell out",
-  howToSpot: "We'll have a table at both libraries this time. Look for our table out front.",
+  howToSpot: "Look for our table out front.",
 };
 
 
@@ -45,14 +45,7 @@ const MAP = {
   embed: "https://www.google.com/maps?q=Science+and+Engineering+Library,+Santa+Cruz,+CA&z=17&output=embed",
   link: "https://www.google.com/maps/search/?api=1&query=Science+and+Engineering+Library+Santa+Cruz+CA",
   // Two locations? List both and the map gets a button for each. Leave spots: [] for one location.
-  spots: [
-    { name: "Science & Engineering Library", short: "S&E Library",
-      embed: "https://www.google.com/maps?q=Science+and+Engineering+Library,+Santa+Cruz,+CA&z=17&output=embed",
-      link: "https://www.google.com/maps/search/?api=1&query=Science+and+Engineering+Library+Santa+Cruz+CA" },
-    { name: "McHenry Library", short: "McHenry Library",
-      embed: "https://www.google.com/maps?q=McHenry+Library,+Santa+Cruz,+CA&z=17&output=embed",
-      link: "https://www.google.com/maps/search/?api=1&query=McHenry+Library+Santa+Cruz+CA" },
-  ],
+  spots: [],
 };
 
 
@@ -73,15 +66,15 @@ const MENU_UPDATED = "November 17";
 
 // price: put a number like 5 or 5.5, or text like "Half $7 · Full $13". Leave null to hide the price.
 const FOOD = [
-  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: true },
-  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: true },
-  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: true },
+  { name: "Pork Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-pork.jpg", soldOut: false },
+  { name: "Chicken Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-chicken-2.jpg", soldOut: false },
+  { name: "Veggie Bánh Mì", price: "Half $7 · Full $13", photo: "banh-mi-veggie.jpg", soldOut: false },
 ];
 
 const DRINKS = [
-  { name: "Classic Thai Tea", price: 7, photo: "thaitea.jpeg", soldOut: true },
-  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasminemilk.jpeg", soldOut: true },
-  { name: "Silky Mango", price: 7, photo: "silkymango.jpeg", soldOut: true },
+  { name: "Classic Thai Tea", price: 7, photo: "thaitea.jpeg", soldOut: false },
+  { name: "Creamy Jasmine Milk Tea", price: 7, photo: "jasminemilk.jpeg", soldOut: false },
+  { name: "Silky Mango", price: 7, photo: "silkymango.jpeg", soldOut: false },
 ];
 
 // Combo deals. Empty [ ] hides the deals box. Example:
